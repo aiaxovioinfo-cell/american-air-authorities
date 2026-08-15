@@ -51,7 +51,7 @@ export default function ReviewsPage() {
               key={i}
               className="rounded-lg border border-brass/20 bg-graphite p-8 shadow-plate"
             >
-              <div className="flex gap-1" aria-label="5 out of 5 stars">
+              <div className="flex gap-1" role="img" aria-label="5 out of 5 stars">
                 {Array.from({ length: 5 }).map((_, s) => (
                   <svg key={s} width="18" height="18" viewBox="0 0 20 20" fill="#E0B478" stroke="#A97939" strokeWidth="1" aria-hidden>
                     <path d="M10 1.6l2.5 5.2 5.7.8-4.1 4 1 5.7-5.1-2.7-5.1 2.7 1-5.7-4.1-4 5.7-.8z" />
@@ -67,7 +67,7 @@ export default function ReviewsPage() {
             </RevealItem>
           ))}
         </Reveal>
-        <p className="container-x mt-8 font-mono text-[0.7rem] uppercase tracking-[0.14em] text-ash/70">
+        <p className="container-x mt-8 font-mono text-[0.7rem] uppercase tracking-[0.14em] text-ash">
           Sample reviews shown for layout · verified Google reviews at launch
         </p>
       </section>

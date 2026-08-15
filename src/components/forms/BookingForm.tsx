@@ -35,7 +35,7 @@ export function BookingForm() {
   }
 
   const field =
-    "w-full rounded-sm border border-brass/25 bg-carbon px-4 py-3 text-bone placeholder:text-ash/70 focus:border-brass focus:outline-none";
+    "w-full rounded-sm border border-brass/25 bg-carbon px-4 py-3 text-bone placeholder:text-ash focus:border-brass focus:outline-none";
   const label =
     "mb-1.5 block font-mono text-[0.7rem] uppercase tracking-[0.14em] text-brass-light";
 

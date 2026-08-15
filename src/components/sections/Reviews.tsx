@@ -95,7 +95,7 @@ export function Reviews() {
             </div>
           ))}
         </motion.div>
-        <p className="mt-6 font-mono text-[0.7rem] uppercase tracking-[0.14em] text-ash/70">
+        <p className="mt-6 font-mono text-[0.7rem] uppercase tracking-[0.14em] text-ash">
           {/* Placeholder reviews for layout — replace with verified Google reviews. */}
           Sample reviews shown for layout · verified Google reviews at launch
         </p>
@@ -106,7 +106,7 @@ export function Reviews() {
 
 function Stars({ n }: { n: number }) {
   return (
-    <div className="flex gap-1" aria-label={`${n} out of 5 stars`}>
+    <div className="flex gap-1" role="img" aria-label={`${n} out of 5 stars`}>
       {Array.from({ length: 5 }).map((_, i) => (
         <svg
           key={i}

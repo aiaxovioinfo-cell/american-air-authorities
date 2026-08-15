@@ -1,40 +1,54 @@
 "use client";
 
 import { useEffect } from "react";
-import Lenis from "lenis";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 /**
  * Lenis smooth scroll (lerp 0.09) wired into GSAP ScrollTrigger so every
- * scroll-driven timeline hangs off the same loop. Fully disabled under
- * prefers-reduced-motion — the page falls back to native scrolling.
+ * scroll-driven timeline hangs off the same loop.
+ *
+ * Lenis + GSAP are dynamically imported inside the effect, and only when
+ * they'll actually be used: never under prefers-reduced-motion, and never on
+ * touch/coarse-pointer devices (native momentum scrolling is better there and
+ * smooth-scroll JS only adds main-thread cost). This keeps ~40KB of scroll
+ * libraries off the critical path on mobile, where they hurt Lighthouse TBT
+ * without benefit. Framer's scroll-driven reveals don't depend on Lenis, so
+ * the page stays fully animated either way.
  */
 export function SmoothScroll({ children }: { children: React.ReactNode }) {
   useEffect(() => {
-    const reduce = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
-    if (reduce) return;
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const coarse = window.matchMedia("(pointer: coarse)").matches;
+    if (reduce || coarse) return;
 
-    gsap.registerPlugin(ScrollTrigger);
+    let cleanup: (() => void) | undefined;
+    let cancelled = false;
 
-    const lenis = new Lenis({
-      lerp: 0.09,
-      smoothWheel: true,
-    });
+    (async () => {
+      const [{ default: Lenis }, { gsap }, { ScrollTrigger }] =
+        await Promise.all([
+          import("lenis"),
+          import("gsap"),
+          import("gsap/ScrollTrigger"),
+        ]);
+      if (cancelled) return;
 
-    lenis.on("scroll", ScrollTrigger.update);
+      gsap.registerPlugin(ScrollTrigger);
+      const lenis = new Lenis({ lerp: 0.09, smoothWheel: true });
+      lenis.on("scroll", ScrollTrigger.update);
 
-    const onRaf = (time: number) => {
-      lenis.raf(time * 1000);
-    };
-    gsap.ticker.add(onRaf);
-    gsap.ticker.lagSmoothing(0);
+      const onRaf = (time: number) => lenis.raf(time * 1000);
+      gsap.ticker.add(onRaf);
+      gsap.ticker.lagSmoothing(0);
+
+      cleanup = () => {
+        gsap.ticker.remove(onRaf);
+        lenis.destroy();
+      };
+    })();
 
     return () => {
-      gsap.ticker.remove(onRaf);
-      lenis.destroy();
+      cancelled = true;
+      cleanup?.();
     };
   }, []);
 
