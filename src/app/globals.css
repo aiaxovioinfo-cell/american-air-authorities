@@ -167,15 +167,6 @@
   }
 }
 
-/* Hide the native cursor only where the custom brass ring runs. */
-@media (hover: hover) and (pointer: fine) {
-  body.custom-cursor-active,
-  body.custom-cursor-active a,
-  body.custom-cursor-active button {
-    cursor: none;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

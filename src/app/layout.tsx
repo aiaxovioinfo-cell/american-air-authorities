@@ -6,7 +6,6 @@ import { businessJsonLd, JsonLd } from "@/lib/schema";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { SmoothScroll } from "@/components/layout/SmoothScroll";
-import { CustomCursor } from "@/components/layout/CustomCursor";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -84,7 +83,6 @@ export default function RootLayout({
         </a>
 
         <div className="noise-overlay" aria-hidden />
-        <CustomCursor />
 
         <SmoothScroll>
           <Header />
