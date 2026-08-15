@@ -69,7 +69,7 @@ export function WhyUs() {
         <Reveal>
           <RevealItem className="relative overflow-hidden rounded-lg border border-brass/20 bg-graphite p-10 shadow-plate md:p-14">
             <EmblemMark
-              className="pointer-events-none absolute -right-10 -top-10 h-72 w-72 opacity-[0.06]"
+              className="pointer-events-none absolute -right-10 -top-6 h-auto w-[28rem] opacity-[0.06]"
               monochrome
             />
             <div className="relative">

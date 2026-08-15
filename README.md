@@ -73,27 +73,42 @@ the verified facts from `site.ts` are used.
 
 ---
 
-## Swapping the logo / emblem
+## The logo / emblem pipeline
 
-The insignia currently ships as **vector artwork** interpreted from the brief
-(eagle head on an arrowhead shield, olive + brass chevrons):
+The site uses the client's real mark — the olive "A" / arrowhead with the eagle
+head in negative space, flanked by three wing bars each side (olive left, brass
+right). Because the source raster is tiny (`public/logo-mark.png`, 195×99), the
+mark is **pixel-traced into clean vector geometry** so it stays sharp at every
+size instead of upscaling the PNG.
 
-- `src/components/brand/EmblemMark.tsx` — the inline SVG lockup used in the
-  header, footer, watermarks, and page-transition wipe.
-- `src/components/hero/EmblemStatic.tsx` — the animated static hero emblem
-  (also the mobile / reduced-motion end state).
-- `public/emblem-static.svg` — standalone file used for favicon / Open Graph.
+Assets in `public/`:
+- `logo-mark.png` — the client's source raster (mark only, transparent). Kept
+  as the trace source and a raster favicon fallback.
+- `logo-mark.svg` / `logo-mark-wide.svg` — traced, flat-color vector marks
+  (square favicon + wide lockup).
+- `og.png` — 1200×630 Open Graph card, the emblem rendered large on carbon.
 
-**To use the client's real artwork:**
+Code:
+- `src/lib/emblemGeometry.ts` — **auto-generated** traced geometry (SVG paths +
+  polygon rings + the exact sampled hex colors). Single source of truth.
+- `src/components/brand/EmblemMark.tsx` — inline SVG mark (header, footer,
+  watermarks, page-transition wipe), driven by `emblemGeometry.ts`.
+- `src/components/hero/EmblemStatic.tsx` — animated static hero emblem (also the
+  mobile / reduced-motion end state), same geometry.
+- `src/components/hero/Emblem3D.tsx` — extrudes the same geometry in 3D.
 
-1. Drop the supplied file at `public/emblem-static.png` (and/or `.svg`).
-2. In `src/components/hero/Hero.tsx`, replace `<EmblemStatic />` with a
-   `next/image` pointing at that file (keep the same wrapper so the scroll
-   dolly still applies).
-3. Point `icons.icon` and the OG `images` in `src/app/layout.tsx` at the new
-   file, and update `image` in `src/lib/schema.tsx`.
-4. Swap `EmblemMark` usages in the header/footer if you want the raster mark
-   there too.
+**To swap in new artwork** (e.g. when the client sends the vector original):
+
+1. Replace `public/logo-mark.png` with the new mark (ideally a larger PNG,
+   transparent, mark only).
+2. Re-run the tracer to regenerate geometry + favicon + OG from it:
+   ```bash
+   node scripts/trace-logo.mjs
+   ```
+   (Colors are sampled from the file; edit the three hex values there only if
+   the brand palette itself changes.) Every placement updates automatically.
+3. If you have a true vector (SVG), you can instead paste its paths straight
+   into `emblemGeometry.ts` and skip the tracer.
 
 ---
 

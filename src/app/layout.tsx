@@ -35,9 +35,9 @@ export const metadata: Metadata = {
       "Same-day AC repair and 24/7 emergency HVAC across Tampa Bay. Family owned, York certified, flat-rate pricing.",
     images: [
       {
-        url: "/emblem-static.svg",
-        width: 240,
-        height: 240,
+        url: "/og.png",
+        width: 1200,
+        height: 630,
         alt: `${site.name} insignia`,
       },
     ],
@@ -47,10 +47,13 @@ export const metadata: Metadata = {
     title: `${site.name} — Tampa HVAC`,
     description:
       "Same-day AC repair and 24/7 emergency HVAC across Tampa Bay. Family owned, York certified.",
-    images: ["/emblem-static.svg"],
+    images: ["/og.png"],
   },
   icons: {
-    icon: "/emblem-static.svg",
+    icon: [
+      { url: "/logo-mark.svg", type: "image/svg+xml" },
+      { url: "/logo-mark.png", type: "image/png" },
+    ],
   },
   alternates: { canonical: site.url },
 };

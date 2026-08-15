@@ -15,7 +15,7 @@ export function businessJsonLd() {
     telephone: site.phoneDisplay,
     email: site.email,
     url: site.url,
-    image: `${site.url}/emblem-static.png`,
+    image: `${site.url}/og.png`,
     priceRange: "$$",
     address: {
       "@type": "PostalAddress",

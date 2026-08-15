@@ -29,7 +29,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
           animate={{ scale: 1.05, opacity: 0 }}
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
         >
-          <EmblemMark className="h-20 w-20" />
+          <EmblemMark className="h-16 w-auto" />
         </motion.div>
       </motion.div>
 

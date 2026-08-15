@@ -64,7 +64,7 @@ export default function AboutPage() {
           <Reveal>
             <RevealItem className="relative overflow-hidden rounded-lg border border-brass/20 bg-graphite p-10 shadow-plate">
               <EmblemMark
-                className="pointer-events-none absolute -right-8 -top-8 h-60 w-60 opacity-[0.06]"
+                className="pointer-events-none absolute -right-8 -top-4 h-auto w-[24rem] opacity-[0.06]"
                 monochrome
               />
               <div className="relative">

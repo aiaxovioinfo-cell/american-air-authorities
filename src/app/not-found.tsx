@@ -7,7 +7,7 @@ export default function NotFound() {
     <section className="relative flex min-h-[80vh] items-center justify-center overflow-hidden bg-carbon pt-[68px]">
       <div className="engineering-grid pointer-events-none absolute inset-0" />
       <div className="container-x relative text-center">
-        <EmblemMark className="mx-auto mb-8 h-24 w-24" />
+        <EmblemMark className="mx-auto mb-8 h-24 w-auto" />
         <p className="eyebrow mb-3 text-brass-light">Error 404</p>
         <h1 className="font-display text-hero font-extrabold uppercase text-bone">
           Off the map

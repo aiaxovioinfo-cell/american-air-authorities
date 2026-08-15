@@ -43,7 +43,7 @@ export function Header() {
           className="group flex items-center gap-3"
           aria-label={`${site.name} — home`}
         >
-          <EmblemMark className="h-10 w-10" />
+          <EmblemMark className="h-8 w-auto" />
           <span className="hidden leading-none sm:block">
             <span className="block font-display text-lg font-extrabold tracking-tight text-brass-light">
               AMERICAN

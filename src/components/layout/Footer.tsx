@@ -10,7 +10,7 @@ export function Footer() {
         {/* Contact block — phone set large in the display face */}
         <div>
           <div className="mb-5 flex items-center gap-3">
-            <EmblemMark className="h-10 w-10" />
+            <EmblemMark className="h-9 w-auto" />
             <span className="font-display text-sm font-extrabold uppercase leading-tight tracking-tight text-bone">
               American
               <br />

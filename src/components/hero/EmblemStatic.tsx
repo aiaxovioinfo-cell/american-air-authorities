@@ -2,17 +2,22 @@
 
 import { motion } from "framer-motion";
 import { useSafeReducedMotion } from "@/lib/useSafeReducedMotion";
+import { EMBLEM } from "@/lib/emblemGeometry";
 
 /**
- * High-quality static/vector emblem that paints immediately (no WebGL cost),
- * used as:
- *  - the instant hero image before the 3D canvas is ready,
- *  - the permanent emblem on mobile / low-end / reduced-motion devices.
+ * High-quality static/vector hero emblem — the REAL mark, pixel-traced from
+ * the client artwork (src/lib/emblemGeometry.ts), so it stays razor-sharp at
+ * hero scale instead of upscaling the 195x99 raster.
  *
- * It also plays the page-load choreography with SVG transforms:
- * chevrons fly in and lock, the shield scales up, a specular bar sweeps
- * across the brass. Under reduced motion it renders the final state only.
+ * Paints immediately (no WebGL cost) and is the permanent emblem on mobile /
+ * low-end / reduced-motion devices. It also plays the page-load choreography:
+ * the wing bars fly in from off-screen left (olive) and right (brass) and lock,
+ * the "A" scales up and settles, then a specular bar sweeps across the brass.
+ * Under reduced motion it renders the final state only.
  */
+const toPath = (pts: readonly (readonly number[])[]) =>
+  "M" + pts.map((p) => `${p[0]} ${p[1]}`).join(" L") + " Z";
+
 export function EmblemStatic({
   play = true,
   className,
@@ -22,114 +27,95 @@ export function EmblemStatic({
 }) {
   const reduce = useSafeReducedMotion();
   const animate = play && !reduce;
-
-  const chevron = (side: "l" | "r", i: number) => {
-    const fromX = side === "l" ? -160 : 160;
-    const stroke = side === "l" ? "url(#embOlive)" : "url(#embBrass)";
-    const d =
-      side === "l"
-        ? `M ${52 - i * 4} ${88 + i * 26} L ${22} ${100 + i * 26} L ${52 - i * 4} ${112 + i * 26}`
-        : `M ${188 + i * 4} ${88 + i * 26} L ${218} ${100 + i * 26} L ${188 + i * 4} ${112 + i * 26}`;
-    return (
-      <motion.path
-        key={`${side}${i}`}
-        d={d}
-        stroke={stroke}
-        initial={animate ? { x: fromX, opacity: 0 } : false}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{
-          delay: 0.4 + i * 0.09,
-          duration: 0.35,
-          ease: [0.16, 1, 0.3, 1],
-        }}
-      />
-    );
-  };
+  const cx = EMBLEM.viewW / 2;
 
   return (
     <div className={className}>
       <svg
-        viewBox="0 0 240 240"
+        viewBox="-8 -34 211 150"
         className="h-full w-full drop-shadow-[0_30px_60px_rgba(0,0,0,0.7)]"
         role="img"
-        aria-label="American Air Authorities insignia — eagle head on an arrowhead shield flanked by rank chevrons"
+        aria-label="American Air Authorities insignia — an eagle head in an arrowhead 'A' flanked by wing bars"
         xmlns="http://www.w3.org/2000/svg"
       >
         <defs>
-          <radialGradient id="embStudio" cx="50%" cy="38%" r="75%">
-            <stop offset="0%" stopColor="#1a1c12" />
-            <stop offset="100%" stopColor="#000000" />
+          <radialGradient id="embGlow" cx="50%" cy="42%" r="62%">
+            <stop offset="0%" stopColor="#20241400" />
+            <stop offset="0%" stopColor="rgba(62,70,31,0.35)" />
+            <stop offset="70%" stopColor="rgba(11,12,8,0)" />
           </radialGradient>
-          <linearGradient id="embBrass" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="#5E4119" />
-            <stop offset="38%" stopColor="#A97939" />
-            <stop offset="66%" stopColor="#E0B478" />
-            <stop offset="85%" stopColor="#FFF2D6" />
-            <stop offset="100%" stopColor="#A97939" />
+          <linearGradient id="embBrassSheen" x1="0" y1="0" x2="1" y2="0.4">
+            <stop offset="0%" stopColor="#8A6230" />
+            <stop offset="55%" stopColor="#A97939" />
+            <stop offset="100%" stopColor="#E0B478" />
           </linearGradient>
-          <linearGradient id="embOlive" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="#1D2110" />
-            <stop offset="55%" stopColor="#3E461F" />
-            <stop offset="100%" stopColor="#6C7A38" />
+          <linearGradient id="embOliveSheen" x1="0" y1="0" x2="1" y2="0.5">
+            <stop offset="0%" stopColor="#2C331A" />
+            <stop offset="60%" stopColor="#3E461F" />
+            <stop offset="100%" stopColor="#556028" />
           </linearGradient>
-          <clipPath id="embClip">
-            <circle cx="120" cy="120" r="118" />
-          </clipPath>
         </defs>
 
-        <g clipPath="url(#embClip)">
-          <circle cx="120" cy="120" r="120" fill="url(#embStudio)" />
+        {/* warm studio glow (never blue) */}
+        <ellipse cx={cx} cy="46" rx="150" ry="95" fill="url(#embGlow)" />
 
-          {/* chevrons */}
-          <g fill="none" strokeWidth="7" strokeLinecap="round" strokeLinejoin="round">
-            {[0, 1, 2].map((i) => chevron("l", i))}
-            {[0, 1, 2].map((i) => chevron("r", i))}
-          </g>
+        {/* Left olive wing bars — fly in from off-screen left */}
+        {EMBLEM.oliveBars.map((bar, i) => (
+          <motion.path
+            key={`ob${i}`}
+            d={toPath(bar)}
+            fill="url(#embOliveSheen)"
+            initial={animate ? { x: -170, opacity: 0 } : false}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ delay: 0.4 + i * 0.08, duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+          />
+        ))}
 
-          {/* shield + eagle scale up and settle */}
-          <motion.g
-            initial={animate ? { scale: 0.4, opacity: 0 } : false}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ delay: 0.9, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            style={{ transformOrigin: "120px 120px" }}
-          >
-            <path
-              d="M120 24 L182 54 L182 128 Q182 176 120 214 Q58 176 58 128 L58 54 Z"
-              fill="url(#embOlive)"
-              stroke="url(#embBrass)"
-              strokeWidth="4"
-            />
-            <path
-              d="M120 40 L168 63 L168 126 Q168 164 120 195 Q72 164 72 126 L72 63 Z"
-              fill="none"
-              stroke="url(#embBrass)"
-              strokeWidth="2"
-              opacity="0.7"
-            />
-            <path
-              d="M120 70 C132 70 142 79 145 92 L157 96 L146 104 C147 116 141 126 130 131 L133 142 L120 137 C108 141 96 137 90 127 C84 117 86 104 95 97 C99 82 108 70 120 70 Z"
-              fill="url(#embBrass)"
-            />
-            <circle cx="126" cy="92" r="3.4" fill="#0B0C08" />
-            <path d="M157 96 L170 99 L157 102 Z" fill="url(#embBrass)" />
-          </motion.g>
+        {/* Right brass wing bars — fly in from off-screen right */}
+        {EMBLEM.brassBars.map((bar, i) => (
+          <motion.path
+            key={`bb${i}`}
+            d={toPath(bar)}
+            fill="url(#embBrassSheen)"
+            initial={animate ? { x: 170, opacity: 0 } : false}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ delay: 0.4 + i * 0.08, duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+          />
+        ))}
 
-          {/* specular sweep across the brass, left to right, once */}
-          {animate && (
-            <motion.rect
-              x="-120"
-              y="0"
-              width="90"
-              height="240"
-              fill="url(#embBrass)"
-              opacity="0.0"
-              style={{ mixBlendMode: "screen" }}
-              initial={{ x: -120, opacity: 0 }}
-              animate={{ x: 300, opacity: [0, 0.5, 0] }}
-              transition={{ delay: 1.4, duration: 0.5, ease: "easeInOut" }}
-            />
-          )}
-        </g>
+        {/* The "A" / arrowhead with eagle head — scales up and settles */}
+        <motion.g
+          initial={animate ? { scale: 0.45, opacity: 0 } : false}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ delay: 0.9, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          style={{ transformOrigin: `${cx}px 55px` }}
+        >
+          <path
+            fillRule="evenodd"
+            fill="url(#embOliveSheen)"
+            d={toPath(EMBLEM.oliveMain)}
+          />
+          {/* eagle brow detail */}
+          <path
+            fill="url(#embOliveSheen)"
+            d="M96 50 L96 52 L98 52 L100 55 L107 54 L107 52 Z"
+          />
+        </motion.g>
+
+        {/* Specular sweep across the brass, left to right, once */}
+        {animate && (
+          <motion.rect
+            x="-40"
+            y="-34"
+            width="70"
+            height="150"
+            fill="#FFF2D6"
+            style={{ mixBlendMode: "screen" }}
+            initial={{ x: -60, opacity: 0 }}
+            animate={{ x: 210, opacity: [0, 0.35, 0] }}
+            transition={{ delay: 1.4, duration: 0.55, ease: "easeInOut" }}
+          />
+        )}
       </svg>
     </div>
   );
