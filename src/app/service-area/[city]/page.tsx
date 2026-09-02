@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { cities, getCity } from "@/lib/cities";
 import { CityTemplate } from "@/components/templates/CityTemplate";
+import { faqJsonLd, JsonLd } from "@/lib/schema";
 import { site } from "@/lib/site";
 
 export function generateStaticParams() {
@@ -16,7 +17,8 @@ export function generateMetadata({
   const city = getCity(params.city);
   if (!city) return {};
   const title = `HVAC & AC Repair in ${city.name}, FL`;
-  const description = `Same-day AC repair, installation, and emergency HVAC (seven days a week, 7 AM–10 PM EST) in ${city.name}, ${city.county} County. ${site.name} · York certified · Lic #${site.license}.`;
+  // Each city's own intro drives its meta description, so no two are alike.
+  const description = `${city.intro} ${site.name} · York certified · Lic #${site.license}.`;
   return {
     title,
     description,
@@ -36,5 +38,10 @@ export default function CityPage({
 }) {
   const city = getCity(params.city);
   if (!city) notFound();
-  return <CityTemplate city={city} />;
+  return (
+    <>
+      <JsonLd data={faqJsonLd(city.faqs)} />
+      <CityTemplate city={city} />
+    </>
+  );
 }

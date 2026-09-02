@@ -64,6 +64,22 @@ export function businessJsonLd() {
   };
 }
 
+/**
+ * FAQPage schema for a city page's Q&A block. Lets the per-city questions
+ * qualify for FAQ rich results and reinforces that each page is distinct.
+ */
+export function faqJsonLd(faqs: { q: string; a: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  };
+}
+
 export function JsonLd({ data }: { data: object }) {
   return (
     <script
