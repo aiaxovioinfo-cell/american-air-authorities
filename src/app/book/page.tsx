@@ -6,7 +6,7 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Book a Service Call",
-  description: `Book same-day HVAC service in Tampa. ${site.name} · York certified · 24/7 emergency · Lic #${site.license}.`,
+  description: `Book same-day HVAC service in Tampa. ${site.name} · York certified · emergency service 7 days a week, 7 AM–10 PM EST · Lic #${site.license}.`,
   alternates: { canonical: `${site.url}/book` },
 };
 
@@ -16,7 +16,7 @@ export default function BookPage() {
       <PageHeader
         eyebrow="Same-day slots held open"
         title={["Book a", "service call"]}
-        intro="Tell us what's happening and how soon you need us. For a no-cool emergency, call directly — you'll reach a real technician."
+        intro="Tell us what's happening and how soon you need us. For a no-cool emergency, call directly — you'll reach our office manager."
       />
 
       <section className="relative z-10 bg-carbon py-20 md:py-28">
@@ -41,9 +41,9 @@ export default function BookPage() {
               </p>
               <div className="hairline-rule my-6" />
               <ul className="space-y-3 text-sm text-bone/80">
-                <li>Answered 24/7, including weekends</li>
+                <li>Answered {site.hours.days}, {site.hours.display}</li>
                 <li>Same-day dispatch for no-cool calls</li>
-                <li>Flat-rate pricing, even after hours</li>
+                <li>Flat-rate pricing, evenings and weekends included</li>
                 <li>Licensed &amp; insured · {site.licenseState} #{site.license}</li>
               </ul>
               <address className="mt-6 not-italic text-sm leading-relaxed text-ash">

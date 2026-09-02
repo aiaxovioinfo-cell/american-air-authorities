@@ -8,7 +8,7 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Service Area — Tampa Bay HVAC",
-  description: `We serve twelve communities across Hillsborough and Pasco County, including Tampa, New Tampa, Brandon, Riverview, and Wesley Chapel. ${site.name}.`,
+  description: `We serve ${cities.length} communities across Hillsborough and Pasco County, including Tampa, South Tampa, New Tampa, Brandon, and Wesley Chapel. ${site.name}.`,
   alternates: { canonical: `${site.url}/service-area` },
 };
 
@@ -18,7 +18,7 @@ export default function ServiceAreaHub() {
       <PageHeader
         eyebrow="Where we work"
         title={["Service", "Area"]}
-        intro="Twelve communities across Hillsborough and Pasco. Pick your city for local details, or call — if you're nearby and not listed, chances are we cover you too."
+        intro={`${cities.length} communities across Hillsborough and Pasco. Pick your city for local details, or call — if you're nearby and not listed, chances are we cover you too.`}
       />
 
       <section className="relative z-10 bg-carbon py-20 md:py-28">

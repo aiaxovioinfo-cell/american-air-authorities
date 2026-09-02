@@ -17,7 +17,7 @@ export default function AboutPage() {
       <PageHeader
         eyebrow="Family owned · Tampa"
         title={["Not a", "roll-up"]}
-        intro="American Air Authorities is a small, licensed, factory-certified HVAC contractor in Tampa — the kind where the tech who quotes your job is the tech who does it."
+        intro="American Air Authorities is a small, licensed, factory-certified HVAC contractor in Tampa — the kind where you get a clear diagnosis and a price you can approve before any work starts."
       />
 
       <section className="relative z-10 bg-carbon py-20 md:py-28">
@@ -36,7 +36,7 @@ export default function AboutPage() {
               upsold on a system you didn&rsquo;t need.
             </RevealItem>
             <RevealItem as="p" className="mt-4 max-w-measure text-lg leading-relaxed text-bone/85">
-              We&rsquo;re the other thing. Family owned, York certified, and small
+              We are the alternative. Family owned, York certified, and small
               enough that the person who answers the phone knows the person
               turning the wrench. We diagnose honestly, quote flat-rate, and stand
               behind the work.
@@ -46,7 +46,7 @@ export default function AboutPage() {
               {[
                 { k: "License", v: `${site.licenseState} #${site.license}` },
                 { k: "Certified", v: "York Comfort Expert" },
-                { k: "Coverage", v: "24/7 emergency" },
+                { k: "Coverage", v: `Emergency, ${site.hours.compact}` },
               ].map((b) => (
                 <div
                   key={b.k}
@@ -73,8 +73,8 @@ export default function AboutPage() {
                   We do the job right, the first time.
                 </blockquote>
                 <p className="mt-5 leading-relaxed text-bone/80">
-                  A fair diagnosis, a price you approve before we start, and a
-                  system that holds after we leave.
+                  An accurate diagnosis, a price you approve before we start, and
+                  a system that holds after we leave.
                 </p>
               </div>
             </RevealItem>

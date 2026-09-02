@@ -35,7 +35,23 @@ export const site = {
     url: "https://www.instagram.com/americanairauthorities",
   },
   url: "https://www.americanairauthorities.com",
-  hoursNote: "24/7 emergency service",
+  /**
+   * Business hours — one source of truth. Open every day, 7 AM to 10 PM EST.
+   * The client does NOT run an all-hours operation: never claim round-the-clock
+   * or overnight availability anywhere on the site. Change a value here and it
+   * propagates to on-page copy, the footer, and the JSON-LD.
+   */
+  hours: {
+    display: "7 AM to 10 PM EST",
+    compact: "7 AM–10 PM EST",
+    days: "seven days a week",
+    // Canonical emergency framing — use verbatim wherever it appears.
+    emergencyLine: "Emergency service seven days a week, 7 AM to 10 PM EST.",
+    // Structured values for schema.org OpeningHoursSpecification.
+    opens: "07:00",
+    closes: "22:00",
+    timeZone: "America/New_York",
+  },
 } as const;
 
 export type SiteInfo = typeof site;

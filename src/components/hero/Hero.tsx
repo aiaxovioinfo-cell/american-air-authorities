@@ -86,9 +86,10 @@ export function Hero() {
       {/* warm vignette, no blue */}
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(120%_90%_at_70%_20%,rgba(169,121,57,0.10),transparent_60%)]" />
 
-      <div className="container-x relative grid min-h-[calc(92vh-68px)] grid-cols-1 items-center gap-8 py-12 lg:grid-cols-[1.05fr_0.95fr]">
-        {/* LEFT — copy */}
-        <div className="relative z-10 order-2 lg:order-1">
+      <div className="container-x relative grid min-h-[calc(92vh-68px)] grid-cols-1 items-start gap-8 py-10 sm:py-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+        {/* LEFT — copy. Leads on every breakpoint so the headline and CTA
+            are never pushed below the fold on tablet/mobile. */}
+        <div className="relative z-10">
           <motion.p
             className="eyebrow mb-5 flex flex-wrap items-center gap-x-3 gap-y-1 text-brass-light"
             initial={reduce ? false : { opacity: 0, y: 12 }}
@@ -136,8 +137,8 @@ export function Hero() {
             transition={{ delay: 2.05, duration: 0.5 }}
           >
             Family-owned, factory-certified HVAC for Tampa homes and businesses.
-            When your AC quits in the heat, the tech who quotes the job is the
-            tech who does it — and the price you approve is the price you pay.
+            When your AC quits in the heat, the price you approve is the price
+            you pay.
           </motion.p>
 
           <motion.div
@@ -175,9 +176,10 @@ export function Hero() {
           </motion.div>
         </div>
 
-        {/* RIGHT — emblem */}
+        {/* RIGHT — emblem. Contained medallion on small screens; full
+            column width from lg up. */}
         <motion.div
-          className="relative order-1 mx-auto aspect-square w-full max-w-[520px] lg:order-2"
+          className="relative mx-auto aspect-square w-full max-w-[260px] sm:max-w-[340px] lg:max-w-[520px]"
           style={
             reduce
               ? undefined

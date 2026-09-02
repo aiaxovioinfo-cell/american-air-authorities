@@ -19,7 +19,13 @@ const ROLES = [
   {
     title: "Install Crew Lead",
     type: "Full-time · Tampa",
-    body: "Run new-system installs from load calc to commissioning. Experience with York equipment a plus.",
+    body: "Run new-system installs from planning to commissioning. Experience with York equipment a plus.",
+  },
+  {
+    // TODO: client to confirm requirements for this role.
+    title: "HVAC Comfort Advisor",
+    type: "Full-time · Tampa",
+    body: "Meet homeowners in their homes, assess what the system is actually doing, and lay out replacement options honestly. No commission board, no pressure quotas — you are paid to get it right, not to close. Comfort-advisor or in-home sales experience preferred; we will train the right person on York equipment.",
   },
 ];
 

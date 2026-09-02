@@ -26,6 +26,13 @@ export const cities: City[] = [
       "Our home base off Amberly Drive. Tech-heavy neighborhoods and newer builds mean smart thermostats and zoned systems we know cold.",
   },
   {
+    slug: "south-tampa",
+    name: "South Tampa",
+    county: "Hillsborough",
+    blurb:
+      "South Tampa's Hyde Park and Palma Ceia bungalows run tight attics, undersized ducts, and additions the original system was never meant to cool. We right-size the fix instead of overselling a bigger condenser.",
+  },
+  {
     slug: "brandon",
     name: "Brandon",
     county: "Hillsborough",

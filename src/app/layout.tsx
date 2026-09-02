@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     template: `%s · ${site.name}`,
   },
   description:
-    "Family-owned, York-certified HVAC in Tampa. Same-day AC repair, installation, and 24/7 emergency service across Hillsborough and Pasco. Flat-rate pricing, licensed and insured.",
+    "Family-owned, York-certified HVAC in Tampa. Same-day AC repair, installation, and emergency service seven days a week, 7 AM–10 PM EST, across Hillsborough and Pasco. Flat-rate pricing, licensed and insured.",
   keywords: [
     "Tampa HVAC",
     "AC repair Tampa",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     siteName: site.name,
     title: `${site.name} — Tampa HVAC`,
     description:
-      "Same-day AC repair and 24/7 emergency HVAC across Tampa Bay. Family owned, York certified, flat-rate pricing.",
+      "Same-day AC repair and emergency HVAC seven days a week, 7 AM–10 PM EST, across Tampa Bay. Family owned, York certified, flat-rate pricing.",
     images: [
       {
         url: "/og.png",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${site.name} — Tampa HVAC`,
     description:
-      "Same-day AC repair and 24/7 emergency HVAC across Tampa Bay. Family owned, York certified.",
+      "Same-day AC repair and emergency HVAC seven days a week, 7 AM–10 PM EST, across Tampa Bay. Family owned, York certified.",
     images: ["/og.png"],
   },
   icons: {

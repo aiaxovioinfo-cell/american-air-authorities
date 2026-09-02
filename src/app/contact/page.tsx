@@ -6,7 +6,7 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: `Call, email, or visit ${site.name} in Tampa. 24/7 emergency HVAC · Lic #${site.license}.`,
+  description: `Call, email, or visit ${site.name} in Tampa. Emergency HVAC seven days a week, 7 AM–10 PM EST · Lic #${site.license}.`,
   alternates: { canonical: `${site.url}/contact` },
 };
 
@@ -16,14 +16,14 @@ export default function ContactPage() {
       <PageHeader
         eyebrow="Get in touch"
         title={["Contact", "us"]}
-        intro="The fastest way to reach us is the phone — it's answered day and night. Prefer email or want to book online? Those work too."
+        intro="The fastest way to reach us is the phone — it's answered seven days a week, 7 AM to 10 PM EST. Prefer email or want to book online? Those work too."
       />
 
       <section className="relative z-10 bg-carbon py-20 md:py-28">
         <div className="container-x grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           <Reveal>
             <RevealItem className="h-full rounded-lg border border-brass/30 bg-graphite p-8 shadow-plate">
-              <p className="eyebrow mb-2 text-brass-light">Call · 24/7</p>
+              <p className="eyebrow mb-2 text-brass-light">Call · 7 days</p>
               <a
                 href={site.phoneHref}
                 className="block font-display text-3xl font-extrabold tracking-tight text-brass-light hover:text-brass-spec"
@@ -32,6 +32,9 @@ export default function ContactPage() {
               </a>
               <p className="mt-1 font-mono text-xs uppercase tracking-[0.14em] text-ash">
                 {site.phoneVanity}
+              </p>
+              <p className="mt-3 text-sm text-bone/80">
+                Open {site.hours.days}, {site.hours.display}
               </p>
             </RevealItem>
           </Reveal>

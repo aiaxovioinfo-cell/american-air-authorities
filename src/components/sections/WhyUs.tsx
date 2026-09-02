@@ -6,7 +6,7 @@ import { site } from "@/lib/site";
 const BADGES = [
   {
     label: "Factory certified",
-    value: "York Certified Comfort Expert",
+    value: "York Certified Comfort Expert Dealer",
     note: "A credential York gives to a small number of dealers, not every contractor with a van.",
   },
   {
@@ -15,9 +15,9 @@ const BADGES = [
     note: "A verifiable state license. Ask the last three contractors who quoted you for theirs.",
   },
   {
-    label: "Always answered",
-    value: "24/7 emergency coverage",
-    note: "A real technician on the line when the house hits an unsafe temperature at 11pm.",
+    label: "Emergency service",
+    value: "We are here at times of need",
+    note: "Emergency service seven days a week, 7 AM to 10 PM EST, when the house won't cool.",
   },
 ];
 
@@ -40,10 +40,10 @@ export function WhyUs() {
           />
           <RevealItem as="p" className="mt-5 max-w-measure text-lg leading-relaxed text-bone/80">
             Private equity is buying up Tampa&rsquo;s HVAC contractors and
-            putting a commission board in the break room. We&rsquo;re the other
-            thing: a small,
-            licensed, factory-certified outfit where the person who quotes your
-            job is the person who does it.
+            putting a commission board in the break room. We are the
+            alternative: a small, licensed, factory-certified outfit where you
+            get a clear diagnosis and a price you can approve before any work
+            starts.
           </RevealItem>
 
           <ul className="mt-8 space-y-3">
@@ -81,8 +81,8 @@ export function WhyUs() {
               </blockquote>
               <p className="mt-6 max-w-measure text-lg leading-relaxed text-bone/80">
                 That isn&rsquo;t a slogan we bought from a marketing agency.
-                It&rsquo;s the standard the whole shop is measured against — a
-                fair diagnosis, a
+                It&rsquo;s the standard the whole shop is measured against — an
+                accurate diagnosis, a
                 price you approve before we start, and a system that holds after
                 we leave.
               </p>

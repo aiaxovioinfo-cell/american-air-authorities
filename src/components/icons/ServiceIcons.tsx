@@ -55,7 +55,7 @@ export function ServiceIcon({ name }: { name: Service["icon"] }) {
         </svg>
       );
     case "emergency":
-      // 24/7 clock with bolt
+      // emergency clock with bolt
       return (
         <svg {...common}>
           <circle cx="20" cy="20" r="13" />

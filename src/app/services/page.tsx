@@ -9,7 +9,7 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "HVAC Services in Tampa",
-  description: `AC repair, installation, commercial HVAC, maintenance plans, and 24/7 emergency service across Tampa Bay. ${site.name} · Lic #${site.license}.`,
+  description: `AC repair, installation, commercial HVAC, maintenance plans, and emergency service seven days a week, 7 AM–10 PM EST, across Tampa Bay. ${site.name} · Lic #${site.license}.`,
   alternates: { canonical: `${site.url}/services` },
 };
 

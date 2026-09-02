@@ -16,7 +16,7 @@ const STEPS = [
   {
     n: "01",
     title: "You call",
-    body: "Reach a real person — day, night, or weekend — and tell us what the system is doing.",
+    body: "Reach our office manager, seven days a week, 7 AM to 10 PM EST, and tell us what the system is doing.",
   },
   {
     n: "02",

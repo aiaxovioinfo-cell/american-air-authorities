@@ -57,8 +57,8 @@ export function businessJsonLd() {
         "Saturday",
         "Sunday",
       ],
-      opens: "00:00",
-      closes: "23:59",
+      opens: site.hours.opens,
+      closes: site.hours.closes,
     },
     sameAs: [site.instagram.url],
   };

@@ -17,7 +17,7 @@ export function Footer() {
               Air Authorities
             </span>
           </div>
-          <p className="eyebrow mb-2">Call day or night</p>
+          <p className="eyebrow mb-2">Call us</p>
           <a
             href={site.phoneHref}
             className="block font-display text-3xl font-extrabold tracking-tight text-brass-light hover:text-brass-spec"
@@ -26,6 +26,9 @@ export function Footer() {
           </a>
           <p className="mt-1 font-mono text-xs uppercase tracking-[0.14em] text-ash">
             {site.phoneVanity}
+          </p>
+          <p className="mt-2 text-sm text-ash">
+            Open {site.hours.days}, {site.hours.display}
           </p>
           <address className="mt-5 not-italic text-sm leading-relaxed text-ash">
             {site.address.street}
@@ -96,13 +99,13 @@ export function Footer() {
               <span className="block font-mono text-[0.7rem] uppercase tracking-[0.12em] text-brass-light">
                 Factory Certified
               </span>
-              York Certified Comfort Expert
+              York Certified Comfort Expert Dealer
             </li>
             <li className="rounded-sm border border-brass/25 bg-graphite p-3">
               <span className="block font-mono text-[0.7rem] uppercase tracking-[0.12em] text-brass-light">
                 Coverage
               </span>
-              24/7 emergency service
+              Emergency service, {site.hours.compact}
             </li>
           </ul>
         </div>

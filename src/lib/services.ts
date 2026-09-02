@@ -21,9 +21,9 @@ export const services: Service[] = [
     icon: "repair",
     eyebrow: "Diagnostic · Flat-rate",
     short:
-      "Blowing warm air, tripping the breaker, or making a noise it didn't make yesterday. We find the actual fault and quote it before we touch a wrench.",
+      "Blowing warm air, tripping the breaker, or making a noise it didn't make yesterday. We diagnose the fault and give you the price before any work begins.",
     intro:
-      "When the house won't cool, you don't need a sales pitch — you need a straight diagnosis and a price you can say yes to. The tech who quotes your repair is the tech who does it.",
+      "When the house won't cool, you don't need a sales pitch — you need a straight diagnosis and a price you can say yes to. You get a clear diagnosis and a price you can approve before any work starts.",
     symptoms: [
       "Blowing warm air on a hot day",
       "Tripping the breaker or won't turn on",
@@ -60,7 +60,7 @@ export const services: Service[] = [
     icon: "commercial",
     eyebrow: "Rooftop · Restaurant · Retail",
     short:
-      "Rooftop units, restaurants, and retail floors that can't afford to lose a service day. We schedule around your hours, not ours.",
+      "Rooftop units, restaurants, and retail floors that can't afford to lose a service day. We plan our visits around your business hours.",
     intro:
       "A down system in a restaurant or store isn't an inconvenience — it's lost revenue by the hour. We service rooftop units and light commercial systems on a schedule that protects your operating day.",
     bullets: [
@@ -80,25 +80,28 @@ export const services: Service[] = [
     intro:
       "Most emergency calls start as a cheap part that nobody caught in time. A maintenance plan is two thorough visits a year that keep your system efficient and put you at the front of the line when something does go wrong.",
     bullets: [
-      "Two comprehensive tune-ups per year",
+      "Two comprehensive maintenance visits per year",
       "Priority scheduling ahead of non-members",
       "Full inspection of electrical, refrigerant, and airflow",
+      "Cleaning of condenser coils",
+      "Cleaning the drain system",
+      "Disinfecting the air handler",
       "Written report on what we checked and found",
     ],
   },
   {
     slug: "emergency",
-    title: "24/7 Emergency",
+    title: "Emergency AC Repair",
     icon: "emergency",
     eyebrow: "Same-day · No-cool",
     short:
-      "95° outside and 80% humidity inside is not a wait-until-Monday problem. Call and reach a real technician, day or night.",
+      "95° outside and 80% humidity inside is not a wait-until-Monday problem. We run emergency calls seven days a week, 7 AM to 10 PM EST.",
     intro:
-      "Systems don't fail on business hours. When the house hits an unsafe temperature, you reach a real technician — not a call center — and we hold same-day slots open for no-cool emergencies.",
+      "Systems don't fail on a schedule. When the house won't cool, call and reach our office manager — not a call center — seven days a week, 7 AM to 10 PM EST, and we hold same-day slots open for no-cool emergencies.",
     bullets: [
-      "Answered day, night, and weekends",
+      "Emergency service seven days a week, 7 AM to 10 PM EST",
       "Same-day dispatch for no-cool emergencies",
-      "Flat-rate pricing, even after hours",
+      "Flat-rate pricing, evenings and weekends included",
       "Straight answer on repair vs. replace, on the spot",
     ],
   },

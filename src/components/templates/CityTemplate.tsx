@@ -7,7 +7,7 @@ import { Reveal, RevealItem } from "@/components/ui/Reveal";
 import { site } from "@/lib/site";
 
 /**
- * One template drives all twelve /service-area/[city] pages. Add a city to
+ * One template drives every /service-area/[city] page. Add a city to
  * lib/cities.ts and the route, metadata, and JSON-LD all follow.
  */
 export function CityTemplate({ city }: { city: City }) {
@@ -33,9 +33,10 @@ export function CityTemplate({ city }: { city: City }) {
               className="mt-5 max-w-measure text-lg leading-relaxed text-bone/85"
             >
               Same-day AC repair, new-system installation, commercial rooftop
-              work, and 24/7 emergency service — all handled by licensed,
-              York-certified technicians who live and work in the Tampa Bay area.
-              The tech who quotes your {city.name} job is the tech who does it.
+              work, and emergency service seven days a week, 7 AM to 10 PM EST —
+              all handled by licensed, York-certified technicians who live and
+              work in the Tampa Bay area. In {city.name} you get a clear
+              diagnosis and a price you can approve before any work starts.
             </RevealItem>
 
             <ul className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2">

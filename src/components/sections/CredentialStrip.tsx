@@ -9,7 +9,7 @@ const ITEMS = [
   "York Certified Comfort Expert",
   "Same-day repairs",
   "Flat-rate pricing",
-  "24/7 emergency",
+  "Emergency service · 7 days · 7 AM–10 PM EST",
   "Financing available",
   "Licensed & insured",
 ];

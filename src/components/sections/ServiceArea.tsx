@@ -20,8 +20,9 @@ export function ServiceArea() {
             lines={["Tampa Bay,", "covered"]}
           />
           <RevealItem as="p" className="mt-5 text-lg leading-relaxed text-bone/80">
-            Twelve communities across Hillsborough and Pasco. If you&rsquo;re
-            nearby and not listed, call — chances are we cover you too.
+            {cities.length} communities across Hillsborough and Pasco. If
+            you&rsquo;re nearby and not listed, call — chances are we cover you
+            too.
           </RevealItem>
         </Reveal>
 

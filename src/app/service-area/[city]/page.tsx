@@ -16,7 +16,7 @@ export function generateMetadata({
   const city = getCity(params.city);
   if (!city) return {};
   const title = `HVAC & AC Repair in ${city.name}, FL`;
-  const description = `Same-day AC repair, installation, and 24/7 emergency HVAC in ${city.name}, ${city.county} County. ${site.name} · York certified · Lic #${site.license}.`;
+  const description = `Same-day AC repair, installation, and emergency HVAC (seven days a week, 7 AM–10 PM EST) in ${city.name}, ${city.county} County. ${site.name} · York certified · Lic #${site.license}.`;
   return {
     title,
     description,

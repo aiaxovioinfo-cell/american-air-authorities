@@ -114,8 +114,8 @@ export function BookingForm() {
 
       <p className="mt-4 text-sm text-ash" aria-live="polite">
         {submitted
-          ? "Opening your email to send the request. Prefer to talk? Call us — we answer 24/7."
-          : "In a hurry? Call us directly and reach a real technician, day or night."}
+          ? "Opening your email to send the request. Prefer to talk? Call us — we answer seven days a week, 7 AM to 10 PM EST."
+          : "In a hurry? Call us directly and reach our office manager, seven days a week, 7 AM to 10 PM EST."}
       </p>
     </form>
   );
