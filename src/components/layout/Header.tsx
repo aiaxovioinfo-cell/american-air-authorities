@@ -71,22 +71,16 @@ export function Header() {
           ))}
         </nav>
 
-        {/* Phone CTA right */}
+        {/* Phone CTA right — one responsive link (icon only < sm, icon + number ≥ sm) */}
         <div className="flex items-center gap-2">
           <a
             href={site.phoneHref}
-            className="hidden items-center gap-2 rounded-sm border border-brass/60 bg-brass px-4 py-2.5 font-mono text-xs font-medium uppercase tracking-[0.12em] text-black brushed-brass transition-colors hover:bg-brass-light sm:inline-flex"
+            aria-label={`Call ${site.phoneDisplay}`}
+            className="inline-flex items-center justify-center gap-2 rounded-sm border border-brass/60 bg-brass p-2.5 text-black brushed-brass transition-colors hover:bg-brass-light sm:px-4 sm:py-2.5 sm:font-mono sm:text-xs sm:font-medium sm:uppercase sm:tracking-[0.12em]"
             data-cursor="target"
           >
             <PhoneGlyph />
-            {site.phoneDisplay}
-          </a>
-          <a
-            href={site.phoneHref}
-            className="inline-flex items-center justify-center rounded-sm border border-brass/60 bg-brass p-2.5 text-black sm:hidden"
-            aria-label={`Call ${site.phoneDisplay}`}
-          >
-            <PhoneGlyph />
+            <span className="hidden sm:inline">{site.phoneDisplay}</span>
           </a>
 
           {/* Mobile menu trigger */}

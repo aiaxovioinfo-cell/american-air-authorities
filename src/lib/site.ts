@@ -4,6 +4,39 @@
  * statistics, job counts, or years in business. Anything unverified
  * is marked with a TODO in the component that would render it.
  */
+
+/**
+ * Canonical origin for og:url, og:image, <link rel="canonical">, the sitemap,
+ * robots.txt, and JSON-LD.
+ *
+ * SERVER-ONLY: do not render `site.url` inside a "use client" component — its
+ * value is resolved from build-time env and is not inlined into client bundles.
+ *
+ * Resolution order:
+ *  1. NEXT_PUBLIC_SITE_URL — set this in Vercel → Settings → Environment
+ *     Variables (Production) once DNS for the real domain points at this
+ *     project, e.g. https://www.americanairauthorities.com
+ *  2. The current deployment's own host — the production domain Vercel knows
+ *     about on production builds, otherwise the immutable *.vercel.app URL of
+ *     the preview/branch build. Either way it is a host that actually serves
+ *     THIS build, so share-preview images and canonicals resolve. (The real
+ *     domain currently still serves the client's old site.)
+ *  3. http://localhost:3000 for local dev.
+ */
+function resolveSiteUrl(): string {
+  const explicit = process.env.NEXT_PUBLIC_SITE_URL?.trim();
+  const vercelHost =
+    (process.env.VERCEL_ENV === "production"
+      ? process.env.VERCEL_PROJECT_PRODUCTION_URL
+      : undefined) ?? process.env.VERCEL_URL;
+  const raw =
+    explicit ||
+    (vercelHost ? `https://${vercelHost}` : "http://localhost:3000");
+  return raw.replace(/\/+$/, "");
+}
+
+const SITE_URL = resolveSiteUrl();
+
 export const site = {
   name: "American Air Authorities",
   shortName: "AAA",
@@ -34,7 +67,8 @@ export const site = {
     handle: "@americanairauthorities",
     url: "https://www.instagram.com/americanairauthorities",
   },
-  url: "https://www.americanairauthorities.com",
+  // Resolved from env at build time — see resolveSiteUrl() above. Server-only.
+  url: SITE_URL,
   /**
    * Business hours — one source of truth. Open every day, 7 AM to 10 PM EST.
    * The client does NOT run an all-hours operation: never claim round-the-clock
