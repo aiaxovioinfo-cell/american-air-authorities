@@ -11,3 +11,6 @@ npm-debug.log*
 
 # local preview screenshots
 /screenshots
+
+# client photos held back from the gallery pending review (never served)
+/gallery-held

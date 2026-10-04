@@ -1,6 +1,8 @@
 import Link from "next/link";
 import type { Service } from "@/lib/services";
 import { PageHeader } from "@/components/layout/PageHeader";
+import { JobPhotos } from "@/components/sections/JobPhotos";
+import { photosFor } from "@/lib/gallery";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { ServiceIcon } from "@/components/icons/ServiceIcons";
 import { Reveal, RevealItem } from "@/components/ui/Reveal";
@@ -92,6 +94,11 @@ export function ServiceTemplate({ service }: { service: Service }) {
           </Reveal>
         </div>
       </section>
+
+      <JobPhotos
+        title={`${service.title} on the job`}
+        photos={photosFor(service.slug)}
+      />
 
       <CtaBand />
     </>
