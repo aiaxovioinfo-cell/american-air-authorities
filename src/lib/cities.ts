@@ -48,21 +48,17 @@ export const cities: City[] = [
     blurb:
       "From the 1920s bungalows of Seminole Heights to downtown condos, we keep the city cool through every August storm.",
     intro:
-      "Tampa is really a dozen housing markets in one, and an AC that works in a new Westshore townhome is sized and installed nothing like the one that belongs in a 1925 Seminole Heights bungalow. We work across all of it — the historic core, the mid-century blocks, and the newer infill — and we quote each house on what it actually needs.",
+      "Tampa is really a dozen housing markets in one, and an AC that works in a new Westshore townhome is sized and installed nothing like the one that belongs in a 1925 Seminole Heights bungalow. We work across the urban core — the condos and towers of Downtown Tampa and the Channel District, and the older houses of Ybor City, Tampa Heights, and West Tampa — and we quote each house on what it actually needs.",
+    // Client-confirmed coverage list.
     neighborhoods: [
-      "Seminole Heights",
-      "Tampa Heights",
-      "Hyde Park",
-      "Davis Islands",
-      "Palma Ceia",
-      "Riverside Heights",
+      "Downtown Tampa",
+      "Channel District",
       "Ybor City",
-      "VM Ybor",
-      "Forest Hills",
-      "Sulphur Springs",
+      "Tampa Heights",
+      "West Tampa",
     ],
     housing:
-      "The bungalow belt — Seminole Heights, Tampa Heights, parts of Hyde Park — is full of 1920s and 1930s homes with ductwork that was added decades after the house was built, run through hot attics, and often fed by a single undersized return. That is the usual reason one room bakes while the next is fine. Many of these homes also have electrical panels that need attention before a modern condenser goes in. Elsewhere you have 1950s–70s concrete-block ranches with their original duct layouts, and downtown a growing stock of condos and townhomes where the work is association-coordinated and access is tight.",
+      "The bungalow belt — Seminole Heights, Tampa Heights, parts of Hyde Park — is full of 1920s and 1930s homes with ductwork that was added decades after the house was built, run through hot attics, and often fed by a single undersized return. That is the usual reason one room bakes while the next is fine. Many of these homes also have electrical panels that need attention before a modern condenser goes in. Elsewhere you have 1950s–70s concrete-block ranches with their original duct layouts, and in Downtown Tampa and the Channel District a growing stock of condos and townhomes where the work is association-coordinated and access is tight.",
     local:
       "Downtown and the close-in neighborhoods sit in an urban heat island, so west- and south-facing units carry a heavier afternoon load than the same equipment would in the suburbs. Lots are small: condensers get wedged against the house, a fence, or a neighbor's wall with too little clearance for airflow and service, which shortens their life. In the low areas near the river and the bay — Davis Islands, parts of Hyde Park — flood-zone rules push air handlers into garages and closets rather than onto a slab.",
     faqs: [
@@ -79,7 +75,7 @@ export const cities: City[] = [
         a: "It does. A condenser rejects heat through the top and sides; blocked clearance makes it run hotter, use more power, and wear out sooner. We'll tell you if yours has room to breathe and what relocating it would involve.",
       },
       {
-        q: "Do you handle condo and townhome work downtown?",
+        q: "Do you handle condo and townhome work in Downtown Tampa and the Channel District?",
         a: "Yes, including buildings that require scheduling through an association or HOA. Tell us the building when you call so we can plan access.",
       },
     ],
@@ -92,20 +88,21 @@ export const cities: City[] = [
       "Our home base off Amberly Drive. Master-planned neighborhoods full of two-story homes with builder systems now reaching end of life.",
     intro:
       "New Tampa is where our shop is based, and most of it went up between the mid-1990s and the late 2000s — Tampa Palms, Hunter's Green, Cross Creek, Live Oak Preserve. The two-story production homes here were built with builder-grade single-stage systems, and a lot of those systems are now 15 to 25 years old and asking to be replaced rather than repaired again.",
+    // Client-confirmed coverage list.
     neighborhoods: [
-      "Tampa Palms",
-      "Hunter's Green",
-      "Cross Creek",
-      "Live Oak Preserve",
-      "K-Bar Ranch",
       "Arbor Greene",
+      "Hunter's Green",
+      "Tampa Palms",
+      "Cory Lake Isles",
       "Grand Hampton",
       "Heritage Isles",
+      "Live Oak Preserve",
+      "K-Bar Ranch",
+      "Cross Creek",
       "Pebble Creek",
-      "Easton Park",
     ],
     housing:
-      "The typical New Tampa house is a two-story built 15–25 years ago on one system, or on a two-zone setup that was never balanced properly. That's why the upstairs runs five to eight degrees warmer than the thermostat downstairs on a hot afternoon. The original equipment was chosen to hit a price point, not matched to the house, so when it fails we look at whether a right-sized, staged replacement with a real duct balance will fix the comfort problem — not just swap in another box the same size.",
+      "We're in and out of Arbor Greene, Hunter's Green, Tampa Palms, Cory Lake Isles, Grand Hampton, Heritage Isles, Live Oak Preserve, K-Bar Ranch, Cross Creek, and Pebble Creek every week, and outside the newest sections the pattern is the same: unlike the young systems in the Pasco communities to the north, most of the equipment here is long past its manufacturer warranty and into replacement age. The typical New Tampa house is a two-story built 15–25 years ago on one system, or on a two-zone setup that was never balanced properly. That's why the upstairs runs five to eight degrees warmer than the thermostat downstairs on a hot afternoon. The original equipment was chosen to hit a price point, not matched to the house, so when it fails we look at whether a right-sized, staged replacement with a real duct balance will fix the comfort problem — not just swap in another box the same size.",
     local:
       "The area is heavily wooded — Live Oak Preserve, the Flatwoods conservation land, mature landscaping in the older sections — so outdoor coils pick up pollen, leaf litter, and organic film faster than they would on an open lot, and drain lines grow algae. Retention ponds and conservation buffers keep humidity up. Most communities also have HOA rules about screening the condenser and where it can sit, which we match when we replace equipment.",
     faqs: [
@@ -114,12 +111,12 @@ export const cities: City[] = [
         a: "It depends on how the house is ducted. If one system feeds both floors, adding a properly designed zone with a damper and a second thermostat often solves it. If the ducts upstairs are undersized, that has to be addressed too. We'll measure airflow before recommending either.",
       },
       {
-        q: "My builder system is about 18 years old. Repair or replace?",
+        q: "My Hunter's Green builder system is about 18 years old. Repair or replace?",
         a: "At that age, with a major failure like a compressor or coil leak, replacement usually wins — parts for older units are pricier and less available, and a new system will cut your summer bills. For a small failure like a capacitor, we just fix it.",
       },
       {
         q: "Will a new outdoor unit meet my HOA's screening rules?",
-        a: "Yes. Tell us the community and we'll set the new condenser to match the existing screening or fencing requirement.",
+        a: "Yes. Tell us the community — Cory Lake Isles, Grand Hampton, and Heritage Isles each have their own HOA rules — and we'll set the new condenser to match the existing screening or fencing requirement.",
       },
       {
         q: "Why does my outdoor coil clog so quickly out here?",
@@ -134,26 +131,23 @@ export const cities: City[] = [
     blurb:
       "Historic Hyde Park bungalows next door to brand-new three-story rebuilds, plus salt air near the bay. Two very different HVAC problems.",
     intro:
-      "South Tampa has split into two housing types that need opposite things from an HVAC contractor. The 1920s–40s bungalows and Mediterranean homes in Hyde Park, Palma Ceia, and Virginia Park have tight attics, undersized ducts, and additions the original system was never meant to reach. The teardown-and-rebuild new construction going up all over the same streets has the reverse problem — often an oversized system in a tight, spray-foamed envelope that short-cycles and leaves the house clammy.",
+      "South Tampa has split into two housing types that need opposite things from an HVAC contractor. The 1920s–40s bungalows and Mediterranean homes in Historic Hyde Park, Palma Ceia, and Golfview and Parkland Estates have tight attics, undersized ducts, and additions the original system was never meant to reach. The teardown-and-rebuild new construction going up all over the same streets has the reverse problem — often an oversized system in a tight, spray-foamed envelope that short-cycles and leaves the house clammy.",
+    // Client-confirmed coverage list.
     neighborhoods: [
-      "Hyde Park",
       "Historic Hyde Park",
-      "SoHo",
+      "Davis Islands",
       "Palma Ceia",
-      "Bayshore Beautiful",
-      "Sunset Park",
-      "Beach Park",
-      "Virginia Park",
-      "Golf View",
       "Ballast Point",
+      "Golfview & Parkland Estates",
+      "Sunset Park",
     ],
     housing:
-      "In the older homes, the work is usually about airflow: original ducts that are too small, no return path from the added-on rooms, and an attic air handler with no room to service it. Right-sizing and duct correction matter more than raw tonnage. In the new builds, the envelope is far tighter than the rule-of-thumb sizing the system was picked with, so a 4- or 5-ton unit satisfies temperature in a few minutes, shuts off before it removes any humidity, and the house feels cool but damp. A staged or variable-capacity system matched to the real load is the fix.",
+      "Across Historic Hyde Park, Davis Islands, Palma Ceia, Ballast Point, Golfview and Parkland Estates, and Sunset Park, the split runs street by street, sometimes house by house. In the older homes, the work is usually about airflow: original ducts that are too small, no return path from the added-on rooms, and an attic air handler with no room to service it. Right-sizing and duct correction matter more than raw tonnage. In the new builds, the envelope is far tighter than the rule-of-thumb sizing the system was picked with, so a 4- or 5-ton unit satisfies temperature in a few minutes, shuts off before it removes any humidity, and the house feels cool but damp. A staged or variable-capacity system matched to the real load is the fix.",
     local:
-      "The neighborhoods along the water — Beach Park, Sunset Park, Bayshore Beautiful — get salt-laden air that corrodes standard condenser coils and cabinets. Coastal coil coatings and a corrosion-resistant cabinet are worth specifying that close to the bay. Flood zone also drives design: in an AE zone the air handler may need to be elevated rather than sitting low in a garage, and we check the zone before locating equipment.",
+      "The neighborhoods along the water — Davis Islands, Ballast Point, Sunset Park — get salt-laden air that corrodes standard condenser coils and cabinets. Coastal coil coatings and a corrosion-resistant cabinet are worth specifying that close to the bay. Flood zone also drives design: in an AE zone the air handler may need to be elevated rather than sitting low in a garage, and we check the zone before locating equipment.",
     faqs: [
       {
-        q: "How long does a condenser last near Bayshore with the salt air?",
+        q: "How long does a condenser last on Davis Islands or near Ballast Point with the salt air?",
         a: "A standard unit can lose years to coil and cabinet corrosion that close to the water. We spec coastal-rated coils and cabinets for homes near the bay, and a yearly coil rinse helps a lot.",
       },
       {
@@ -165,7 +159,7 @@ export const cities: City[] = [
         a: "Very possibly. Tight new construction needs less capacity than older sizing rules assume. We can measure run times and humidity and run a load calc; if it's oversized, a staged system or a smaller properly matched unit will dehumidify far better.",
       },
       {
-        q: "We're in a flood zone. Where should the air handler go?",
+        q: "We're on Davis Islands, in a flood zone. Where should the air handler go?",
         a: "That depends on your flood zone designation. In higher-risk zones the air handler and connections may need to be elevated. We check the zone and set the equipment to meet it.",
       },
     ],
@@ -178,6 +172,7 @@ export const cities: City[] = [
       "1980s and 90s neighborhoods where a lot of systems are on their second compressor and past the point where another repair makes sense.",
     intro:
       "Brandon filled in heavily through the 1980s and 90s, and a large share of the AC systems here are now well into their second decade — second compressor, aging refrigerant lines, dropping efficiency. In Bloomingdale, Providence Lakes, and the neighborhoods off Lumsden and Bell Shoals, the honest conversation is often about replacement timing, not another patch on a system that's telling you it's done.",
+    // TODO: client to confirm coverage list — not yet provided (asked whether we work this area).
     neighborhoods: [
       "Bloomingdale",
       "Providence Lakes",
@@ -218,6 +213,7 @@ export const cities: City[] = [
       "Two eras side by side — 2000s builder homes needing their first replacement, and post-2015 subdivisions already fighting humidity.",
     intro:
       "Riverview has grown in waves, and it shows in the HVAC work. The late-90s and 2000s homes in Rivercrest and Summerfield are reaching first-replacement age. The newer subdivisions — Triple Creek, South Fork, Lucaya Lake — are only a few years old but were built on former farmland with single-stage systems sized by rule of thumb, and a lot of those homeowners are already calling about a house that cools but stays damp.",
+    // TODO: client to confirm coverage list — not yet provided (asked whether we work this area).
     neighborhoods: [
       "Panther Trace",
       "Summerfield",
@@ -258,21 +254,25 @@ export const cities: City[] = [
     blurb:
       "Newer master-planned communities off SR-56 where tight, unshaded houses make right-sizing and humidity control the whole game.",
     intro:
-      "Wesley Chapel is one of the newest parts of the metro — Seven Oaks, Meadow Pointe, Union Park, Epperson with its lagoon — and most of it was built after 2000 on former pasture along SR-56. The homes are tighter and better sealed than older Tampa Bay housing, which sounds good until an oversized builder system short-cycles and never pulls the humidity down. That's the call we get most often out here.",
+      "Wesley Chapel is one of the newest parts of the metro — Seven Oaks, Meadow Pointe, the Wiregrass Ranch communities, Epperson with its lagoon — and most of it was built after 2000 on former pasture along SR-56. The homes are tighter and better sealed than older Tampa Bay housing, which sounds good until an oversized builder system short-cycles and never pulls the humidity down. That's the call we get most often out here.",
+    // Client-confirmed coverage list.
     neighborhoods: [
       "Seven Oaks",
       "Meadow Pointe",
-      "Union Park",
-      "Epperson",
-      "Watergrass",
-      "Persimmon Park",
-      "The Ridge at Wiregrass",
-      "Country Walk",
+      "Estancia at Wiregrass",
+      "The Ridge at Wiregrass Ranch",
+      "Winding Ridge",
+      "Saddlebrook",
+      "Chapel Pines",
       "Lexington Oaks",
-      "Quail Hollow",
+      "Epperson",
+      "Mirada",
+      "WaterGrass",
+      "Northwood",
+      "Ashley Pines",
     ],
     housing:
-      "The typical Wesley Chapel home is post-2000, often post-2010, with a 14–15 SEER builder heat pump and a two-story floor plan that gains heat upstairs through the afternoon. Because the building envelope is relatively tight, a system sized by the old rules is usually too big: it satisfies the thermostat in a few minutes, cycles off, and the interior humidity climbs. Right-sizing on a real load calculation, and choosing equipment that can run at a lower stage for longer, is what keeps these houses at a comfortable 75–76° without feeling swampy.",
+      "Our Wesley Chapel calls cover Seven Oaks, Meadow Pointe, Saddlebrook, Lexington Oaks, Chapel Pines, Winding Ridge, Northwood, Ashley Pines, Estancia at Wiregrass, and The Ridge at Wiregrass Ranch, plus the newest communities — Epperson, Mirada, and WaterGrass — where much of the construction dates from 2015 on and a lot of systems are still inside their manufacturer warranty. The typical Wesley Chapel home is post-2000, often post-2010, with a 14–15 SEER builder heat pump and a two-story floor plan that gains heat upstairs through the afternoon. Because the building envelope is relatively tight, a system sized by the old rules is usually too big: it satisfies the thermostat in a few minutes, cycles off, and the interior humidity climbs. Right-sizing on a real load calculation, and choosing equipment that can run at a lower stage for longer, is what keeps these houses at a comfortable 75–76° without feeling swampy.",
     local:
       "The SR-56 corridor was open pasture until recently, so tree cover is minimal and solar load on roofs and west walls is high. Summers bring heavy humidity and daily convective storms. Newer, tighter homes don't leak that moisture out on their own the way an older house does, so the AC has to do all the dehumidification — which again comes back to run time and correct sizing rather than brute tonnage.",
     faqs: [
@@ -289,8 +289,8 @@ export const cities: City[] = [
         a: "Depending on the ductwork: adding a properly designed upstairs zone, correcting undersized supply runs, or in some layouts a dedicated system for the second floor. We measure airflow room by room before recommending one.",
       },
       {
-        q: "How humid should the house feel at 76 degrees?",
-        a: "Indoor relative humidity in the low 50s or below feels comfortable at 76°. If you're at 76° and it still feels sticky, the system isn't running long enough to dehumidify — usually a sizing or airflow issue.",
+        q: "Our Epperson home is only a few years old. Is the AC still under warranty?",
+        a: "Quite possibly. Major manufacturers typically cover parts for 10 years when the system is registered, and many homes in Epperson, Mirada, and WaterGrass are well inside that window. Labor coverage is usually much shorter. Before we quote a part, we look up the unit's serial number so you don't pay for something the manufacturer covers.",
       },
     ],
   },
@@ -302,6 +302,7 @@ export const cities: City[] = [
       "Lakefront lots and larger semi-custom homes where a load calculation matters and a bigger unit is not the answer.",
     intro:
       "Lutz spreads out over lakes and larger lots, and the homes tend to be bigger and more custom than the production housing to the south — higher ceilings, more glass, gated communities like Cheval. On a house like that, guessing the system size a ton high leaves you with a cold, clammy home, so a real load calculation earns its keep here more than almost anywhere in our area.",
+    // TODO: client to confirm coverage list — not yet provided (asked whether we work this area).
     neighborhoods: [
       "Cheval",
       "Lakeshore Ranch",
@@ -343,17 +344,10 @@ export const cities: City[] = [
       "Original Carrollwood dates to the 1960s and the Village to the 70s — a lot of homes on their second or third system under heavy oak canopy.",
     intro:
       "Carrollwood is one of Tampa's older suburbs — Original Carrollwood goes back to the 1960s, Carrollwood Village to the 1970s and 80s. Many homes here are on their second or third AC system, still using the original refrigerant lines and undersized return ducts, and shaded by mature oaks that are hard on outdoor equipment. We find the real fault before quoting a full replacement, because on a house this age it's not always the obvious answer.",
-    neighborhoods: [
-      "Original Carrollwood",
-      "Carrollwood Village",
-      "Lake Carroll",
-      "Village XVII",
-      "North Lakes",
-      "Emerald Forest",
-      "Whitaker Oaks",
-    ],
+    // Client-confirmed coverage list.
+    neighborhoods: ["Carrollwood", "Carrollwood Village"],
     housing:
-      "The classic Carrollwood system is a builder unit that's been replaced once or twice, reusing a lineset and ductwork from the 60s or 70s. Those older ducts often have a single small return, so the system can't move the air a modern unit expects, and the house has hot and cold rooms regardless of what's on the pad outside. Some homes still have original single-pane windows driving the load up. We check the ducts, the return sizing, and the lineset condition before recommending a replacement — sometimes correcting those is what actually fixes the comfort complaint.",
+      "Whether the house is in Carrollwood proper or in Carrollwood Village, it's almost never a warranty question here, the way it often is in the newer Pasco communities — the equipment is well past that, and the real question is replacement timing. The classic Carrollwood system is a builder unit that's been replaced once or twice, reusing a lineset and ductwork from the 60s or 70s. Those older ducts often have a single small return, so the system can't move the air a modern unit expects, and the house has hot and cold rooms regardless of what's on the pad outside. Some homes still have original single-pane windows driving the load up. We check the ducts, the return sizing, and the lineset condition before recommending a replacement — sometimes correcting those is what actually fixes the comfort complaint.",
     local:
       "The oak canopy that makes Carrollwood shady also drops leaves, catkins, and organic debris onto condenser coils and into drain pans, where it turns into algae and clogs the line. Older slab homes here typically have the air handler in a hall closet with barely enough room to open the door, which affects what replacement equipment will physically fit.",
     faqs: [
@@ -383,6 +377,7 @@ export const cities: City[] = [
       "A 1920s-platted city built out mid-century, plus a large rental belt near USF where maintenance tends to get deferred.",
     intro:
       "Temple Terrace was laid out in the 1920s around its golf course and built out heavily through the 1950s, 60s, and 70s. The result is a lot of concrete-block ranch homes with original duct layouts and older electrical, plus — near USF — a large stock of rental houses where maintenance has usually been put off. Both need a contractor who diagnoses honestly and quotes flat-rate.",
+    // TODO: client to confirm coverage list — not yet provided (asked whether we work this area).
     neighborhoods: [
       "Theodore Roosevelt area",
       "Raintree",
@@ -423,6 +418,7 @@ export const cities: City[] = [
       "Mature Bloomingdale and River Hills neighborhoods that lean on their AC eight months a year, many on a first or second replacement.",
     intro:
       "Valrico's established neighborhoods — Bloomingdale, the gated River Hills golf community, Diamond Hill — are mostly 20 to 30 years old, and their systems run hard eight months a year. A lot of them are at first- or second-replacement age, and the two-story plans with a bonus room over the garage have their own predictable comfort complaint.",
+    // TODO: client to confirm coverage list — not yet provided (asked whether we work this area).
     neighborhoods: [
       "Bloomingdale",
       "River Hills",
@@ -463,6 +459,7 @@ export const cities: City[] = [
       "Acreage properties with guest houses and workshops on multiple systems, almost all on private wells that scale the coils.",
     intro:
       "Odessa keeps its rural-estate character — larger homes on acre-plus lots around Keystone and the Eagles, often with a guest house, a detached garage, or a workshop, each on its own system. Starkey Ranch is the exception, a dense post-2015 community on the Pasco side. Nearly everyone out here is on a private well, which changes how the equipment ages.",
+    // TODO: client to confirm coverage list — not yet provided (asked whether we work this area).
     neighborhoods: [
       "Keystone",
       "Ivy Lake Estates",
@@ -503,18 +500,27 @@ export const cities: City[] = [
       "Far enough north that the big chains quote a multi-day wait in a heat wave. We answer the same day.",
     intro:
       "Land O' Lakes sits north of the Pasco line, split between established 1980s–90s homes around the Lake Padgett chain and large newer master-planned communities like Bexley and Connerton. It's far enough out that when a system quits in a heat wave, the regional chains often quote a multi-day wait — so we hold same-day slots for no-cool calls up here.",
+    // Client-confirmed coverage list.
     neighborhoods: [
-      "Connerton",
       "Bexley",
-      "Ballantrae",
-      "Lake Padgett",
-      "Stonegate",
+      "Connerton",
+      "Oakstead",
+      "Concord Station",
+      "Angeline",
+      "Lake Padgett Estates",
       "Wilderness Lake Preserve",
+      "Sable Ridge",
       "Plantation Palms",
-      "Sanders Farms",
+      "Asbel Creek",
+      "Asbel Estates",
+      "Ballantrae Village",
+      "Lakeshore Ranch",
+      "Stagecoach Village",
+      "Suncoast Meadows",
+      "Suncoast Lakes",
     ],
     housing:
-      "Two housing types, two sets of issues. The older homes around Lake Padgett and Plantation Palms are 25–35 years old with original ductwork and systems near the end of their life — first-replacement territory, often with lingering humidity from leaky duct in hot attics. The newer communities — Bexley, Connerton, Wilderness Lake — have tight envelopes and single-stage builder heat pumps that short-cycle and under-dehumidify when they're sized to the old rules. Right-sizing and staging is the fix on the new side; duct sealing and replacement on the old side.",
+      "We cover the whole area — Lake Padgett Estates, Plantation Palms, Sable Ridge, Stagecoach Village, Oakstead, Concord Station, Ballantrae Village, Wilderness Lake Preserve, Lakeshore Ranch, Asbel Creek, Asbel Estates, Suncoast Meadows, and Suncoast Lakes, plus the newest communities at Bexley, Connerton, and Angeline. Two housing types, two sets of issues. The older homes around Lake Padgett and Plantation Palms are 25–35 years old with original ductwork and systems near the end of their life — first-replacement territory, often with lingering humidity from leaky duct in hot attics. The newer communities have tight envelopes and single-stage builder heat pumps that short-cycle and under-dehumidify when they're sized to the old rules — and in Bexley, Connerton, and Angeline, where much of the building is 2015 or later, that equipment is often still under its manufacturer warranty. Right-sizing and staging is the fix on the new side; duct sealing and replacement on the old side.",
     local:
       "The area is dense with lakes and conservation land, so humidity load is high through the long cooling season. Along the older US-41 corridor there are pockets of manufactured and 1970s–80s block homes on well water, where scale on the coil and belly-duct issues are common; the master-planned west side is newer and tighter. Distance is the other factor — being at the north edge of most contractors' range is exactly why a no-cool call here can turn into a three-day wait, and why we keep capacity for same-day dispatch to Land O' Lakes seven days a week.",
     faqs: [
@@ -524,10 +530,10 @@ export const cities: City[] = [
       },
       {
         q: "My Bexley home short-cycles and stays humid. Is that the size?",
-        a: "Usually. Tight newer homes need less capacity than standard sizing assumes; an oversized unit cools fast and quits before it dehumidifies. We verify with run-time and humidity readings and a load calc.",
+        a: "Usually. Tight newer homes need less capacity than standard sizing assumes; an oversized unit cools fast and quits before it dehumidifies. We verify with run-time and humidity readings and a load calc. In a newer Bexley, Connerton, or Angeline home the system may still be under its manufacturer warranty, so we check that before quoting any parts.",
       },
       {
-        q: "Lake Padgett house with 1990s ductwork — worth sealing?",
+        q: "Lake Padgett Estates house with 1990s ductwork — worth sealing?",
         a: "Often yes. Sealing leaky attic duct recovers lost capacity and cuts the humidity those leaks pull in from the attic, and it costs a fraction of a full system. We'll assess whether yours is a candidate.",
       },
       {
@@ -544,6 +550,7 @@ export const cities: City[] = [
       "Unincorporated Hillsborough — older and manufactured homes on larger lots, plus small commercial off I-4 that can't lose a day.",
     intro:
       "Seffner is unincorporated Hillsborough east of Tampa, on the agricultural fringe that runs toward Dover and Plant City: older single-family and manufactured homes on larger lots around Mango and Kingsway, mixed with warehouses, shops, and small offices along the US-92 and Martin Luther King corridors near I-4. It's an area where flat-rate pricing matters — so the invoice matches the quote — and where a fair number of contractors won't touch the manufactured-home systems or the window units that still need replacing with central air.",
+    // TODO: client to confirm coverage list — not yet provided (asked whether we work this area).
     neighborhoods: [
       "Mango",
       "Kingsway",

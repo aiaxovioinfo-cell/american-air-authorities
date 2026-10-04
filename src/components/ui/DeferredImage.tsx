@@ -1,7 +1,16 @@
 "use client";
 
-import Image, { type StaticImageData } from "next/image";
 import { useEffect, useRef, useState } from "react";
+
+/** Plain <img> attributes, computed on the server by getImageProps(). */
+export type DeferredImgProps = {
+  src: string;
+  srcSet?: string;
+  sizes?: string;
+  width?: number | `${number}`;
+  height?: number | `${number}`;
+  alt: string;
+};
 
 /**
  * Below-the-fold photo that doesn't compete with first paint.
@@ -9,19 +18,20 @@ import { useEffect, useRef, useState } from "react";
  * Native lazy loading on a throttled mobile connection starts fetching
  * anything within ~2500px of the viewport, so a photo grid under a page
  * header downloads during load and slows the header reveal (the LCP).
- * This mounts the <Image> only once its tile is within 300px of the
+ * This mounts the <img> only once its tile is within 300px of the
  * viewport, showing the blur placeholder at the exact aspect ratio until
  * then — no layout shift. A <noscript> <img> covers crawlers / no-JS.
+ *
+ * Deliberately a plain <img>, not next/image: the srcset is built on the
+ * server (see PhotoImage), so next/image's client runtime never ships.
  */
 export function DeferredImage({
-  src,
-  alt,
-  sizes,
+  img,
+  blurDataURL,
   className,
 }: {
-  src: StaticImageData;
-  alt: string;
-  sizes: string;
+  img: DeferredImgProps;
+  blurDataURL?: string;
   className?: string;
 }) {
   const [ready, setReady] = useState(false);
@@ -48,12 +58,16 @@ export function DeferredImage({
 
   if (ready) {
     return (
-      <Image
-        src={src}
-        alt={alt}
-        sizes={sizes}
-        placeholder="blur"
+      // eslint-disable-next-line @next/next/no-img-element, jsx-a11y/alt-text
+      <img
+        {...img}
+        decoding="async"
         className={className}
+        style={
+          blurDataURL
+            ? { backgroundImage: `url("${blurDataURL}")`, backgroundSize: "cover" }
+            : undefined
+        }
       />
     );
   }
@@ -63,23 +77,16 @@ export function DeferredImage({
       <span
         ref={ref}
         role="img"
-        aria-label={alt}
+        aria-label={img.alt}
         className={`block bg-cover bg-center ${className ?? ""}`}
         style={{
-          aspectRatio: `${src.width} / ${src.height}`,
-          backgroundImage: src.blurDataURL ? `url("${src.blurDataURL}")` : undefined,
+          aspectRatio: `${img.width} / ${img.height}`,
+          backgroundImage: blurDataURL ? `url("${blurDataURL}")` : undefined,
         }}
       />
       <noscript>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={src.src}
-          alt={alt}
-          width={src.width}
-          height={src.height}
-          loading="lazy"
-          className={className}
-        />
+        {/* eslint-disable-next-line @next/next/no-img-element, jsx-a11y/alt-text */}
+        <img {...img} loading="lazy" className={className} />
       </noscript>
     </>
   );

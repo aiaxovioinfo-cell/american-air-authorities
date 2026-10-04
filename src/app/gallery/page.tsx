@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { Reveal, RevealItem } from "@/components/ui/Reveal";
-import { DeferredImage } from "@/components/ui/DeferredImage";
+import { PhotoImage } from "@/components/ui/PhotoImage";
 import { galleryCategories, galleryPhotos } from "@/lib/gallery";
 import { site } from "@/lib/site";
 
@@ -70,7 +70,7 @@ export default function GalleryPage() {
                   key={p.src.src}
                   className="mb-4 break-inside-avoid overflow-hidden rounded-md border border-brass/20 bg-graphite"
                 >
-                  <DeferredImage
+                  <PhotoImage
                     src={p.src}
                     alt={p.alt}
                     sizes="(min-width: 1200px) 370px, (min-width: 1024px) 31vw, (min-width: 640px) 46vw, 92vw"

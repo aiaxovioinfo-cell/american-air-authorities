@@ -21,10 +21,12 @@ import grandaireCondenserWallBracketCommercial from "../../public/gallery/granda
  * an entry — the static import gives next/image its dimensions and blur.
  *
  * Two of the original 15 photos are held back in /gallery-held (outside
- * public/, git-ignored) pending client review: both show techs in tan
- * button-up work shirts rather than the green company tees. One of them is the
- * only service-call photo, which is why "Service" is currently empty and
- * /services/ac-repair has no photo strip.
+ * public/, git-ignored) pending client review: both show the same pale khaki
+ * button-up shirt, not the green company tees — possibly an older uniform, a
+ * subcontractor, or another company's crew; unconfirmed. One of them is the
+ * only service-call photo, which is why "Service" is intentionally empty (and
+ * hidden) and /services/ac-repair has no photo strip. Don't fill it with a
+ * substitute — release the held photo only once the client confirms.
  */
 export type GalleryCategory =
   | "installations"

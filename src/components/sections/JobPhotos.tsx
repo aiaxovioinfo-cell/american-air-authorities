@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Reveal, RevealItem } from "@/components/ui/Reveal";
-import { DeferredImage } from "@/components/ui/DeferredImage";
+import { PhotoImage } from "@/components/ui/PhotoImage";
 import type { GalleryPhoto } from "@/lib/gallery";
 
 /**
@@ -69,7 +69,7 @@ export function JobPhotos({
             >
               {/* Natural aspect ratio: before/after composites carry their
                   labels at the edges, so cropping would cut them off. */}
-              <DeferredImage
+              <PhotoImage
                 src={p.src}
                 alt={p.alt}
                 sizes={sizes}
