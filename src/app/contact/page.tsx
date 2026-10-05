@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import Link from "next/link";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { Reveal, RevealItem } from "@/components/ui/Reveal";
 import { site } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Contact",
-  description: `Call, email, or visit ${site.name} in Tampa. Emergency HVAC seven days a week, 7 AM–10 PM EST · Lic #${site.license}.`,
-  alternates: { canonical: `${site.url}/contact` },
-};
+  description:
+    "Contact American Air Authorities in Tampa by phone, email or online booking. Phones are answered seven days a week, 7 AM–10 PM EST. Licensed and insured.",
+  path: "/contact",
+});
 
 export default function ContactPage() {
   return (

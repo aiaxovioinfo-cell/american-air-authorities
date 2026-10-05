@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { Reveal, RevealItem } from "@/components/ui/Reveal";
 import { googleReviewsUrl, reviews } from "@/lib/reviews";
-import { site } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Reviews",
-  description: `What Tampa homeowners and businesses say about ${site.name} — in their own words, from our Google reviews.`,
-  alternates: { canonical: `${site.url}/reviews` },
-};
+  description:
+    "Google reviews of American Air Authorities from Tampa homeowners and businesses — repairs, full installs, maintenance and duct work, in their own words.",
+  path: "/reviews",
+});
 
 /**
  * Real Google reviews, customer wording as written. Selection and rules

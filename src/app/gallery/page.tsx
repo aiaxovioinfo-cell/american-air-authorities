@@ -1,16 +1,17 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { Reveal, RevealItem } from "@/components/ui/Reveal";
 import { PhotoImage } from "@/components/ui/PhotoImage";
 import { galleryCategories, galleryPhotos } from "@/lib/gallery";
-import { site } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Gallery",
-  description: `Job-site photos of installs and replacements by ${site.name} — York, GrandAire, and Goodman equipment, before and after.`,
-  alternates: { canonical: `${site.url}/gallery` },
-};
+  description:
+    "Job-site photos from American Air Authorities: York, GrandAire and Goodman installs, before-and-after replacements and commercial work. No stock images.",
+  path: "/gallery",
+});
 
 /**
  * Photos and captions live in lib/gallery.ts. Categories with no approved

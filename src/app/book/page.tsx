@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { BookingForm } from "@/components/forms/BookingForm";
 import { Reveal, RevealItem } from "@/components/ui/Reveal";
 import { site } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Book a Service Call",
-  description: `Book same-day HVAC service in Tampa. ${site.name} · York certified · emergency service 7 days a week, 7 AM–10 PM EST · Lic #${site.license}.`,
-  alternates: { canonical: `${site.url}/book` },
-};
+  description:
+    "Book AC repair or HVAC service in Tampa online. Same-day slots are held for no-cool emergencies, and we answer the phone seven days a week, 7 AM–10 PM EST.",
+  path: "/book",
+});
 
 export default function BookPage() {
   return (

@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import Link from "next/link";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { Reveal, RevealItem } from "@/components/ui/Reveal";
 import { site } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Financing",
-  description: `Financing available on approved credit for new HVAC systems and major repairs. ${site.name}, Tampa.`,
-  alternates: { canonical: `${site.url}/financing` },
-};
+  description:
+    "HVAC financing in Tampa on approved credit for new AC systems and major repairs. Get the equipment you need now and pay on a schedule that works for you.",
+  path: "/financing",
+});
 
 export default function FinancingPage() {
   return (

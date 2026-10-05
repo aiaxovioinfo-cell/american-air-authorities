@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getService, services } from "@/lib/services";
 import { ServiceTemplate } from "@/components/templates/ServiceTemplate";
-import { site } from "@/lib/site";
+import { pageMetadata } from "@/lib/metadata";
 
 export function generateStaticParams() {
   return services.map((s) => ({ slug: s.slug }));
@@ -15,18 +15,11 @@ export function generateMetadata({
 }): Metadata {
   const service = getService(params.slug);
   if (!service) return {};
-  const title = `${service.title} in Tampa`;
-  const description = `${service.intro} ${site.name} · Lic #${site.license}.`;
-  return {
-    title,
-    description,
-    alternates: { canonical: `${site.url}/services/${service.slug}` },
-    openGraph: {
-      title: `${title} · ${site.name}`,
-      description,
-      url: `${site.url}/services/${service.slug}`,
-    },
-  };
+  return pageMetadata({
+    title: `${service.title} in Tampa`,
+    description: service.metaDescription,
+    path: `/services/${service.slug}`,
+  });
 }
 
 export default function ServicePage({

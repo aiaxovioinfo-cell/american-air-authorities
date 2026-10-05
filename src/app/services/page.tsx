@@ -1,17 +1,18 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import Link from "next/link";
 import { services } from "@/lib/services";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { ServiceIcon } from "@/components/icons/ServiceIcons";
 import { Reveal, RevealItem } from "@/components/ui/Reveal";
-import { site } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "HVAC Services in Tampa",
-  description: `AC repair, installation, commercial HVAC, maintenance plans, and emergency service seven days a week, 7 AM–10 PM EST, across Tampa Bay. ${site.name} · Lic #${site.license}.`,
-  alternates: { canonical: `${site.url}/services` },
-};
+  description:
+    "HVAC services in Tampa: AC repair, system installation, duct cleaning, commercial HVAC, maintenance plans and emergency service seven days, 7 AM–10 PM EST.",
+  path: "/services",
+});
 
 export default function ServicesHub() {
   return (

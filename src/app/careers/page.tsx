@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { Reveal, RevealItem } from "@/components/ui/Reveal";
 import { site } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Careers",
-  description: `Join a family-owned, York-certified HVAC shop in Tampa. No commission board — just honest work. ${site.name}.`,
-  alternates: { canonical: `${site.url}/careers` },
-};
+  description:
+    "HVAC technician careers in Tampa at a family-owned, York-certified shop. No commission board and no sales quotas — you're paid to do honest, careful work.",
+  path: "/careers",
+});
 
 const ROLES = [
   {

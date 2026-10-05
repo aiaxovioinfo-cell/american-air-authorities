@@ -1,16 +1,17 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import Link from "next/link";
 import { cities } from "@/lib/cities";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { Reveal, RevealItem } from "@/components/ui/Reveal";
-import { site } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Service Area — Tampa Bay HVAC",
-  description: `We serve ${cities.length} communities across Hillsborough and Pasco County, including Tampa, South Tampa, New Tampa, Brandon, and Wesley Chapel. ${site.name}.`,
-  alternates: { canonical: `${site.url}/service-area` },
-};
+  description:
+    `HVAC and AC service across ${cities.length} Tampa Bay communities in Hillsborough and Pasco, including Tampa, South Tampa, New Tampa, Wesley Chapel and Land O' Lakes.`,
+  path: "/service-area",
+});
 
 export default function ServiceAreaHub() {
   return (

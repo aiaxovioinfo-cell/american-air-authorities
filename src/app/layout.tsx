@@ -3,6 +3,10 @@ import "./globals.css";
 import { fontBody, fontDisplay, fontMono } from "@/lib/fonts";
 import { site } from "@/lib/site";
 import { businessJsonLd, JsonLd } from "@/lib/schema";
+import { SHARE_IMAGE } from "@/lib/metadata";
+
+const HOME_DESCRIPTION =
+  "Family-owned, York-certified HVAC in Tampa. AC repair, installation and emergency service seven days a week, 7 AM–10 PM EST. Flat-rate pricing, licensed.";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { SmoothScroll } from "@/components/layout/SmoothScroll";
@@ -13,8 +17,9 @@ export const metadata: Metadata = {
     default: `${site.name} — Tampa HVAC | ${site.tagline}`,
     template: `%s · ${site.name}`,
   },
-  description:
-    "Family-owned, York-certified HVAC in Tampa. Same-day AC repair, installation, and emergency service seven days a week, 7 AM–10 PM EST, across Hillsborough and Pasco. Flat-rate pricing, licensed and insured.",
+  // Homepage description (150–155 chars). Other pages set their own via
+  // pageMetadata() in lib/metadata.ts; og/twitter below repeat this string.
+  description: HOME_DESCRIPTION,
   keywords: [
     "Tampa HVAC",
     "AC repair Tampa",
@@ -30,23 +35,14 @@ export const metadata: Metadata = {
     url: site.url,
     siteName: site.name,
     title: `${site.name} — Tampa HVAC`,
-    description:
-      "Same-day AC repair and emergency HVAC seven days a week, 7 AM–10 PM EST, across Tampa Bay. Family owned, York certified, flat-rate pricing.",
-    images: [
-      {
-        url: "/og.png",
-        width: 1200,
-        height: 630,
-        alt: `${site.name} insignia`,
-      },
-    ],
+    description: HOME_DESCRIPTION,
+    images: [SHARE_IMAGE],
   },
   twitter: {
     card: "summary_large_image",
     title: `${site.name} — Tampa HVAC`,
-    description:
-      "Same-day AC repair and emergency HVAC seven days a week, 7 AM–10 PM EST, across Tampa Bay. Family owned, York certified.",
-    images: ["/og.png"],
+    description: HOME_DESCRIPTION,
+    images: [SHARE_IMAGE.url],
   },
   icons: {
     icon: [

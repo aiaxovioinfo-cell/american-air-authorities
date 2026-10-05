@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { Reveal, RevealItem } from "@/components/ui/Reveal";
-import { site } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Blog",
-  description: `Straight HVAC advice for Tampa homeowners from ${site.name} — no marketing filler.`,
-  alternates: { canonical: `${site.url}/blog` },
-};
+  description:
+    "Straight HVAC advice for Tampa homeowners, written by licensed technicians rather than a content mill. Practical guidance with no marketing filler at all.",
+  path: "/blog",
+});
 
 /**
  * Blog scaffold. Titles below are planned topics; wire these to a CMS or MDX

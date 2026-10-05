@@ -8,6 +8,8 @@ export type Service = {
   title: string;
   icon: "repair" | "install" | "commercial" | "maintenance" | "emergency";
   eyebrow: string;
+  /** Meta + og + twitter description: 150–155 chars. Purpose-written. */
+  metaDescription: string;
   short: string; // homepage card copy
   intro: string; // service page lede
   symptoms?: string[]; // "in the customer's words"
@@ -20,6 +22,8 @@ export const services: Service[] = [
     title: "AC Repair",
     icon: "repair",
     eyebrow: "Diagnostic · Flat-rate",
+    metaDescription:
+      "AC repair in Tampa with a full diagnostic before any quote and flat-rate pricing, so the invoice matches the price you approved. All major brands repaired.",
     short:
       "Blowing warm air, tripping the breaker, or making a noise it didn't make yesterday. We diagnose the fault and give you the price before any work begins.",
     intro:
@@ -43,6 +47,8 @@ export const services: Service[] = [
     title: "System Installation",
     icon: "install",
     eyebrow: "Load-calc · York CCE",
+    metaDescription:
+      "New AC system installation in Tampa, sized by a Manual J load calculation, not guesswork. York Certified Comfort Expert dealer; financing is available.",
     short:
       "A right-sized system, sized by a real load calculation — not a bigger unit sold on guesswork. Installed clean and commissioned properly.",
     intro:
@@ -59,6 +65,8 @@ export const services: Service[] = [
     title: "Commercial HVAC",
     icon: "commercial",
     eyebrow: "Rooftop · Restaurant · Retail",
+    metaDescription:
+      "Commercial HVAC in Tampa for rooftop units, restaurants, retail and small offices — service scheduled around your business hours. Licensed and insured.",
     short:
       "Rooftop units, restaurants, and retail floors that can't afford to lose a service day. We plan our visits around your business hours.",
     intro:
@@ -75,6 +83,8 @@ export const services: Service[] = [
     title: "Maintenance Plans",
     icon: "maintenance",
     eyebrow: "Tune-up · Priority",
+    metaDescription:
+      "HVAC maintenance plans in Tampa: two full visits a year, coil and drain cleaning, electrical and refrigerant checks, plus priority scheduling all year.",
     short:
       "Two visits a year that catch the small failure before it becomes the July breakdown. Priority scheduling when you do need us.",
     intro:
@@ -97,6 +107,8 @@ export const services: Service[] = [
     title: "Duct Cleaning & Sealing",
     icon: "maintenance",
     eyebrow: "Clean · Seal · Filter",
+    metaDescription:
+      "Duct cleaning and sealing in Tampa. We inspect first and tell you if cleaning isn't needed, then seal the gaps that pull hot attic air into your system.",
     short:
       "Dirty ducts and leaky ducts cause different problems. We look first, clean what needs cleaning, and seal the gaps that pull hot attic air into your system.",
     intro:
@@ -119,6 +131,8 @@ export const services: Service[] = [
     title: "Emergency AC Repair",
     icon: "emergency",
     eyebrow: "Same-day · No-cool",
+    metaDescription:
+      "Emergency AC repair in Tampa, seven days a week, 7 AM–10 PM EST. Same-day slots held for no-cool calls, and flat-rate pricing on evenings and weekends.",
     short:
       "95° outside and 80% humidity inside is not a wait-until-Monday problem. We run emergency calls seven days a week, 7 AM to 10 PM EST.",
     intro:

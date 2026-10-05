@@ -19,6 +19,11 @@ export type City = {
   slug: string;
   name: string;
   county: "Hillsborough" | "Pasco";
+  /**
+   * Meta + og + twitter description: 150–155 chars, city and service first,
+   * one distinguishing detail. Purpose-written — never the intro.
+   */
+  metaDescription: string;
   /** ≤160 chars. Card text on the homepage + /service-area grid. */
   blurb: string;
   /** Unique 2–3 sentence page intro. Never shared between cities. */
@@ -45,6 +50,8 @@ export const cities: City[] = [
     slug: "tampa",
     name: "Tampa",
     county: "Hillsborough",
+    metaDescription:
+      "AC repair and HVAC service in Tampa, from older homes in Ybor City, Tampa Heights and West Tampa to Downtown and Channel District condos. York certified.",
     blurb:
       "From the 1920s bungalows of Seminole Heights to downtown condos, we keep the city cool through every August storm.",
     intro:
@@ -84,6 +91,8 @@ export const cities: City[] = [
     slug: "new-tampa",
     name: "New Tampa",
     county: "Hillsborough",
+    metaDescription:
+      "AC repair and replacement in New Tampa, where our shop is based. Many builder systems here are 15–25 years old; we'll say straight if repair still pays.",
     blurb:
       "Our home base off Amberly Drive. Master-planned neighborhoods full of two-story homes with builder systems now reaching end of life.",
     intro:
@@ -128,6 +137,8 @@ export const cities: City[] = [
     slug: "south-tampa",
     name: "South Tampa",
     county: "Hillsborough",
+    metaDescription:
+      "AC repair and installation in South Tampa — 1920s bungalows, new three-story rebuilds, and salt air near the bay on Davis Islands and at Ballast Point.",
     blurb:
       "Historic Hyde Park bungalows next door to brand-new three-story rebuilds, plus salt air near the bay. Two very different HVAC problems.",
     intro:
@@ -168,6 +179,8 @@ export const cities: City[] = [
     slug: "brandon",
     name: "Brandon",
     county: "Hillsborough",
+    metaDescription:
+      "AC repair and replacement in Brandon, where many 1980s–90s systems are on a second compressor. Straight repair-or-replace numbers and flat-rate pricing.",
     blurb:
       "1980s and 90s neighborhoods where a lot of systems are on their second compressor and past the point where another repair makes sense.",
     intro:
@@ -202,6 +215,8 @@ export const cities: City[] = [
     slug: "riverview",
     name: "Riverview",
     county: "Hillsborough",
+    metaDescription:
+      "AC repair and installation in Riverview: first replacements for 2000s homes, and humidity fixes for newer builds with oversized systems. York certified.",
     blurb:
       "Two eras side by side — 2000s builder homes needing their first replacement, and post-2015 subdivisions already fighting humidity.",
     intro:
@@ -236,6 +251,8 @@ export const cities: City[] = [
     slug: "wesley-chapel",
     name: "Wesley Chapel",
     county: "Pasco",
+    metaDescription:
+      "AC repair and installation in Wesley Chapel. Many Epperson, Mirada and WaterGrass systems are still under warranty — we check that before quoting a part.",
     blurb:
       "Newer master-planned communities off SR-56 where tight, unshaded houses make right-sizing and humidity control the whole game.",
     intro:
@@ -283,6 +300,8 @@ export const cities: City[] = [
     slug: "lutz",
     name: "Lutz",
     county: "Hillsborough",
+    metaDescription:
+      "AC installation and repair in Lutz for larger lakefront and semi-custom homes, where a real load calculation — not a bigger unit — fixes a clammy house.",
     blurb:
       "Lakefront lots and larger semi-custom homes where a load calculation matters and a bigger unit is not the answer.",
     intro:
@@ -317,6 +336,8 @@ export const cities: City[] = [
     slug: "carrollwood",
     name: "Carrollwood",
     county: "Hillsborough",
+    metaDescription:
+      "AC repair and replacement in Carrollwood and Carrollwood Village — older homes on a second or third system, under heavy oak canopy. Family-owned shop.",
     blurb:
       "Original Carrollwood dates to the 1960s and the Village to the 70s — a lot of homes on their second or third system under heavy oak canopy.",
     intro:
@@ -350,6 +371,8 @@ export const cities: City[] = [
     slug: "temple-terrace",
     name: "Temple Terrace",
     county: "Hillsborough",
+    metaDescription:
+      "AC repair and HVAC service in Temple Terrace — mid-century homes, and rentals near USF where deferred maintenance catches up. Family owned, York certified.",
     blurb:
       "A 1920s-platted city built out mid-century, plus a large rental belt near USF where maintenance tends to get deferred.",
     intro:
@@ -384,6 +407,8 @@ export const cities: City[] = [
     slug: "valrico",
     name: "Valrico",
     county: "Hillsborough",
+    metaDescription:
+      "AC repair and replacement in Valrico: 1980s–2000s homes running AC eight months a year, and the bonus room over the garage that never cools. Flat-rate.",
     blurb:
       "Mature 1980s–2000s neighborhoods that lean on their AC eight months a year, many on a first or second system replacement.",
     intro:
@@ -418,6 +443,8 @@ export const cities: City[] = [
     slug: "odessa",
     name: "Odessa",
     county: "Pasco",
+    metaDescription:
+      "HVAC service in Odessa for acreage properties with guest houses and workshops on separate systems — all serviced in one visit, with well-water coil care.",
     blurb:
       "Acreage properties with guest houses and workshops on multiple systems, almost all on private wells that scale the coils.",
     intro:
@@ -452,6 +479,8 @@ export const cities: City[] = [
     slug: "land-o-lakes",
     name: "Land O' Lakes",
     county: "Pasco",
+    metaDescription:
+      "AC repair and installation in Land O' Lakes, from Lake Padgett Estates to Bexley and Connerton. Same-day slots held for no-cool calls, even this far north.",
     blurb:
       "Far enough north that the big chains quote a multi-day wait in a heat wave. We answer the same day.",
     intro:
@@ -502,6 +531,8 @@ export const cities: City[] = [
     slug: "seffner",
     name: "Seffner",
     county: "Hillsborough",
+    metaDescription:
+      "AC repair in Seffner for older, manufactured and mobile homes many contractors turn down, plus rooftop units for small businesses along I-4. Flat-rate.",
     blurb:
       "Unincorporated Hillsborough — older and manufactured homes on larger lots, plus small commercial off I-4 that can't lose a day.",
     intro:

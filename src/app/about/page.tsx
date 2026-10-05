@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { EmblemMark } from "@/components/brand/EmblemMark";
 import { Reveal, RevealItem } from "@/components/ui/Reveal";
 import { site } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "About",
-  description: `${site.name} is a family-owned, York-certified HVAC contractor serving Tampa Bay. Licensed, insured, and built on doing the job right the first time.`,
-  alternates: { canonical: `${site.url}/about` },
-};
+  description:
+    "American Air Authorities is a family-owned, York-certified HVAC contractor in Tampa — a small shop, not a private-equity roll-up. Licensed, flat-rate.",
+  path: "/about",
+});
 
 export default function AboutPage() {
   return (
