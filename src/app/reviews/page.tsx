@@ -5,7 +5,6 @@ import { CtaBand } from "@/components/sections/CtaBand";
 import { Reveal, RevealItem } from "@/components/ui/Reveal";
 import { googleReviewsUrl, reviews } from "@/lib/reviews";
 import { Stars } from "@/components/ui/Stars";
-import { JsonLd, reviewsJsonLd } from "@/lib/schema";
 
 export const metadata: Metadata = pageMetadata({
   title: "Reviews",
@@ -16,7 +15,7 @@ export const metadata: Metadata = pageMetadata({
 
 /**
  * Real Google reviews, customer wording as written. Selection and rules
- * (truncation, no ratings, no review JSON-LD) live in lib/reviews.ts.
+ * (truncation, ratings, no review JSON-LD) live in lib/reviews.ts.
  */
 export default function ReviewsPage() {
   return (
@@ -59,7 +58,6 @@ export default function ReviewsPage() {
       </section>
 
       <CtaBand />
-      <JsonLd data={reviewsJsonLd(reviews)} />
     </>
   );
 }

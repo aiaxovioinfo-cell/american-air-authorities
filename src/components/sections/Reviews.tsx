@@ -11,7 +11,7 @@ import { Stars } from "@/components/ui/Stars";
 /**
  * Section 7 — reviews carousel with drag + momentum. Real Google reviews,
  * customer wording as written, with each review's Google star rating — see
- * lib/reviews.ts for the selection rules. Review JSON-LD is on app/page.tsx.
+ * lib/reviews.ts for the selection rules. No review JSON-LD by design (schema.tsx).
  */
 export function Reviews() {
   const reduce = useSafeReducedMotion();

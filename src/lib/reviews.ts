@@ -9,14 +9,9 @@
  *    ellipsis. Never complete a truncated sentence.
  *  - No dates (the export only has relative ones like "a month ago").
  *  - `rating` comes from the client's Google profile (all 10 are 5-star; the
- *    export itself has no ratings). It is rendered as stars on every card —
- *    marked-up ratings must be visible on the page.
- *  - Each review gets individual Review JSON-LD (reviewsJsonLd in schema.tsx).
- *    reviewBody is exactly the visible text, ellipsis included.
- *  - NO AggregateRating until we have the business's real overall rating and
- *    total review count from its Google profile. It must reflect every
- *    review, not just these ten, and be shown on the page.
- *    TODO: client to confirm — "ratingValue X.X, reviewCount N".
+ *    export itself has no ratings). It is rendered as stars on every card.
+ *  - No Review / AggregateRating JSON-LD, by decision — see the note on
+ *    businessJsonLd in schema.tsx before adding any.
  *
  * Mix: repair, full install, maintenance, duct work, commercial, and two
  * where we fixed what other contractors couldn't diagnose.
