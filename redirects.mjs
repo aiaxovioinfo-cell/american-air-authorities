@@ -19,9 +19,8 @@
  *   1. After cutover, open Google Search Console → Pages / Performance, export
  *      the full list of indexed old URLs, and add redirects for anything not
  *      covered here (old blog posts, campaign landing pages, backlinked paths).
- *   2. /service-page/duct-cleaning is pointed at /services/maintenance-plans
- *      as the closest match. If duct cleaning is still an offered service it
- *      should get its own page, and this target should change.
+ *   2. (resolved) /service-page/duct-cleaning now points at its own page,
+ *      /services/duct-cleaning — the client's reviews confirm the service.
  *   3. Confirm there was never a standalone /about, /financing, or /blog URL
  *      on the Wix site (none appear in its sitemaps).
  */
@@ -69,10 +68,10 @@ export const wixRedirects = [
     statusCode: 301,
   },
 
-  // Wix Bookings service page. TODO above — closest current match.
+  // Wix Bookings service page → its dedicated replacement.
   {
     source: "/service-page/duct-cleaning",
-    destination: "/services/maintenance-plans",
+    destination: "/services/duct-cleaning",
     statusCode: 301,
   },
 ];

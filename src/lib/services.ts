@@ -89,6 +89,31 @@ export const services: Service[] = [
       "Written report on what we checked and found",
     ],
   },
+  // Confirmed by the client's Google reviews (duct cleaning, duct/vent sealing,
+  // filtration upgrades, and telling a customer cleaning wasn't needed).
+  // TODO: client to confirm — exact scope and anything else to list here.
+  {
+    slug: "duct-cleaning",
+    title: "Duct Cleaning & Sealing",
+    icon: "maintenance",
+    eyebrow: "Clean · Seal · Filter",
+    short:
+      "Dirty ducts and leaky ducts cause different problems. We look first, clean what needs cleaning, and seal the gaps that pull hot attic air into your system.",
+    intro:
+      "Dust that comes back days after you clean, a stale smell when the system starts, a room that never cools like the rest — those can be dirty ducts, leaky ducts, or both. We inspect first, and if your ducts don't need cleaning, we'll tell you.",
+    symptoms: [
+      "Dust settling on furniture soon after you clean",
+      "A musty or stale smell when the system kicks on",
+      "Rooms at the end of a duct run that never cool like the rest",
+      "Dust streaks or visible gaps around supply vents",
+    ],
+    bullets: [
+      "Inspection first — if cleaning isn't needed, we say so",
+      "Duct cleaning to clear built-up dust and debris",
+      "Sealing gaps at vents and duct connections so hot attic air stays out",
+      "Filtration upgrades matched to your system",
+    ],
+  },
   {
     slug: "emergency",
     title: "Emergency AC Repair",
@@ -111,7 +136,8 @@ export function getService(slug: string): Service | undefined {
   return services.find((s) => s.slug === slug);
 }
 
-// The four cards featured on the homepage (emergency lives in the CTA band).
+// The four cards featured on the homepage (emergency lives in the CTA band;
+// duct cleaning is listed on /services and in the footer).
 export const homepageServices = services.filter(
-  (s) => s.slug !== "emergency",
+  (s) => s.slug !== "emergency" && s.slug !== "duct-cleaning",
 );

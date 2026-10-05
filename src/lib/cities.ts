@@ -171,17 +171,10 @@ export const cities: City[] = [
     blurb:
       "1980s and 90s neighborhoods where a lot of systems are on their second compressor and past the point where another repair makes sense.",
     intro:
-      "Brandon filled in heavily through the 1980s and 90s, and a large share of the AC systems here are now well into their second decade — second compressor, aging refrigerant lines, dropping efficiency. In Bloomingdale, Providence Lakes, and the neighborhoods off Lumsden and Bell Shoals, the honest conversation is often about replacement timing, not another patch on a system that's telling you it's done.",
-    // TODO: client to confirm coverage list — not yet provided (asked whether we work this area).
-    neighborhoods: [
-      "Bloomingdale",
-      "Providence Lakes",
-      "Brandon Estates",
-      "Lakeview Village",
-      "Sterling Ranch",
-      "Heather Lakes",
-      "Peppermill",
-    ],
+      "Brandon filled in heavily through the 1980s and 90s, and a large share of the AC systems here are now well into their second decade — second compressor, aging refrigerant lines, dropping efficiency. Across Brandon, the honest conversation is often about replacement timing, not another patch on a system that's telling you it's done.",
+    // TODO: client to confirm coverage list — not yet provided (asked whether we
+    // work this area). Empty until the client supplies it; the template hides it.
+    neighborhoods: [],
     housing:
       "The common Brandon system is a builder unit from the late 80s or 90s that's had a compressor or a coil replaced already. Some are still running R-22, the refrigerant that's no longer produced — a leak in one of those means an expensive recharge or a partial rebuild that rarely pencils out. Original attic ductwork from that era is often crushed flex with boots that have pulled loose, so the house has quietly lost 10–20% of its airflow. We measure that before quoting, because sometimes a duct repair buys real years and sometimes it's throwing money at a system that should be replaced.",
     local:
@@ -200,7 +193,7 @@ export const cities: City[] = [
         a: "Often yes — sealing leaks and reconnecting pulled boots can restore lost airflow for a fraction of a full replacement. We'll tell you if yours is a candidate or if it's too far gone.",
       },
       {
-        q: "How fast can you get to Bloomingdale on a no-cool call?",
+        q: "How fast can you get to Brandon on a no-cool call?",
         a: "We hold same-day slots for no-cool emergencies and run calls seven days a week, 7 AM to 10 PM EST.",
       },
     ],
@@ -212,18 +205,10 @@ export const cities: City[] = [
     blurb:
       "Two eras side by side — 2000s builder homes needing their first replacement, and post-2015 subdivisions already fighting humidity.",
     intro:
-      "Riverview has grown in waves, and it shows in the HVAC work. The late-90s and 2000s homes in Rivercrest and Summerfield are reaching first-replacement age. The newer subdivisions — Triple Creek, South Fork, Lucaya Lake — are only a few years old but were built on former farmland with single-stage systems sized by rule of thumb, and a lot of those homeowners are already calling about a house that cools but stays damp.",
-    // TODO: client to confirm coverage list — not yet provided (asked whether we work this area).
-    neighborhoods: [
-      "Panther Trace",
-      "Summerfield",
-      "Rivercrest",
-      "South Fork",
-      "Triple Creek",
-      "Winthrop",
-      "Lucaya Lake Club",
-      "Boyette Farms",
-    ],
+      "Riverview has grown in waves, and it shows in the HVAC work. The late-90s and 2000s homes are reaching first-replacement age. The newest subdivisions are only a few years old but were built on former farmland with single-stage systems sized by rule of thumb, and a lot of those homeowners are already calling about a house that cools but stays damp.",
+    // TODO: client to confirm coverage list — not yet provided (asked whether we
+    // work this area). Empty until the client supplies it; the template hides it.
+    neighborhoods: [],
     housing:
       "In the older Riverview neighborhoods the systems are 15–25 years old, single-stage, and near the end of a normal service life — the usual first-replacement candidates. In the newer builds the equipment is young but frequently oversized for the house: it hits the thermostat setpoint fast, shuts off before it wrings any moisture out of the air, and the home sits at 74° and 60%-plus humidity. A properly sized system, or a two-stage one that runs longer at lower capacity, is what actually dries the house out.",
     local:
@@ -242,7 +227,7 @@ export const cities: City[] = [
         a: "Yes. We run a load calculation for your specific house and compare it to the installed capacity. Oversizing is extremely common in production homes and it's the root cause of most humidity complaints.",
       },
       {
-        q: "My west-facing unit in Triple Creek runs all afternoon. Is that normal?",
+        q: "My west-facing unit in a newer subdivision runs all afternoon. Is that normal?",
         a: "Long afternoon run times on the sunny side of a new, unshaded house are normal and actually good for humidity — as long as the house is holding temperature. If it's running constantly and losing ground, that's a sizing, charge, or airflow problem worth a look.",
       },
     ],
@@ -301,25 +286,17 @@ export const cities: City[] = [
     blurb:
       "Lakefront lots and larger semi-custom homes where a load calculation matters and a bigger unit is not the answer.",
     intro:
-      "Lutz spreads out over lakes and larger lots, and the homes tend to be bigger and more custom than the production housing to the south — higher ceilings, more glass, gated communities like Cheval. On a house like that, guessing the system size a ton high leaves you with a cold, clammy home, so a real load calculation earns its keep here more than almost anywhere in our area.",
-    // TODO: client to confirm coverage list — not yet provided (asked whether we work this area).
-    neighborhoods: [
-      "Cheval",
-      "Lakeshore Ranch",
-      "Ladera",
-      "Sanctuary on Livingston",
-      "Calusa Trace",
-      "Van Dyke Farms",
-      "Willow Bend",
-      "Heritage Harbor",
-    ],
+      "Lutz spreads out over lakes and larger lots, and the homes tend to be bigger and more custom than the production housing to the south — higher ceilings, more glass, and a number of gated communities. On a house like that, guessing the system size a ton high leaves you with a cold, clammy home, so a real load calculation earns its keep here more than almost anywhere in our area.",
+    // TODO: client to confirm coverage list — not yet provided (asked whether we
+    // work this area). Empty until the client supplies it; the template hides it.
+    neighborhoods: [],
     housing:
       "Lutz homes often have volume ceilings, large window walls, and open plans that behave very differently from a boxy production home — the load swings hard between a shaded morning and a west-glass afternoon. That's exactly the situation where oversized equipment short-cycles and under-dehumidifies. Many properties also have a detached garage, guest suite, or pool bath that's either starved by the main system or running on its own aging mini-split. We size the main system to the calculated load and handle the outbuildings as their own small zones.",
     local:
-      "Lakefront humidity is real, and lawn irrigation drawn from a well or a lake throws mineral-laden overspray onto outdoor coils, leaving white scale that insulates the coil and cuts capacity. Gated and acreage properties — Cheval especially — mean we coordinate gate access and longer equipment hauls when we replace a system. Homes along the older Van Dyke and Lutz-Lake Fern corridors tend to have 1990s systems on borrowed time, while the newer sections off the Suncoast Parkway are tight builds with the usual oversizing questions. Acreage homes here often run a whole-house generator, and we make sure the AC's electrical load and start-up draw are accounted for in that transfer setup.",
+      "Lakefront humidity is real, and lawn irrigation drawn from a well or a lake throws mineral-laden overspray onto outdoor coils, leaving white scale that insulates the coil and cuts capacity. Gated and acreage properties mean we coordinate gate access and longer equipment hauls when we replace a system. Homes along the older Van Dyke and Lutz-Lake Fern corridors tend to have 1990s systems on borrowed time, while the newer sections off the Suncoast Parkway are tight builds with the usual oversizing questions. Acreage homes here often run a whole-house generator, and we make sure the AC's electrical load and start-up draw are accounted for in that transfer setup.",
     faqs: [
       {
-        q: "We were quoted a 5-ton for our Cheval home. How do you decide the size?",
+        q: "We were quoted a 5-ton for our Lutz home. How do you decide the size?",
         a: "With a room-by-room load calculation: square footage, ceiling volume, window area and orientation, insulation, and shade. On big open-plan homes the honest number is often smaller than a quick quote assumes, and the smaller right-sized system will dehumidify far better.",
       },
       {
@@ -377,16 +354,9 @@ export const cities: City[] = [
       "A 1920s-platted city built out mid-century, plus a large rental belt near USF where maintenance tends to get deferred.",
     intro:
       "Temple Terrace was laid out in the 1920s around its golf course and built out heavily through the 1950s, 60s, and 70s. The result is a lot of concrete-block ranch homes with original duct layouts and older electrical, plus — near USF — a large stock of rental houses where maintenance has usually been put off. Both need a contractor who diagnoses honestly and quotes flat-rate.",
-    // TODO: client to confirm coverage list — not yet provided (asked whether we work this area).
-    neighborhoods: [
-      "Theodore Roosevelt area",
-      "Raintree",
-      "Woodmont",
-      "Grovewood",
-      "Terrace Oaks",
-      "Whiteway Estates",
-      "the USF rental belt",
-    ],
+    // TODO: client to confirm coverage list — not yet provided (asked whether we
+    // work this area). Empty until the client supplies it; the template hides it.
+    neighborhoods: [],
     housing:
       "The mid-century core homes typically have their original duct trunk in the attic, one or two returns, and a panel that may need a load evaluation before a new condenser goes on. On the rental side, we're often called to a system that simply hasn't been serviced in years: the coil is packed solid, the blower wheel is caked, the drain is overflowing, and the unit 'runs but doesn't cool' because airflow and heat transfer have both collapsed. Frequently a thorough cleaning and a few parts bring it back; sometimes it's genuinely finished.",
     local:
@@ -415,26 +385,19 @@ export const cities: City[] = [
     name: "Valrico",
     county: "Hillsborough",
     blurb:
-      "Mature Bloomingdale and River Hills neighborhoods that lean on their AC eight months a year, many on a first or second replacement.",
+      "Mature 1980s–2000s neighborhoods that lean on their AC eight months a year, many on a first or second system replacement.",
     intro:
-      "Valrico's established neighborhoods — Bloomingdale, the gated River Hills golf community, Diamond Hill — are mostly 20 to 30 years old, and their systems run hard eight months a year. A lot of them are at first- or second-replacement age, and the two-story plans with a bonus room over the garage have their own predictable comfort complaint.",
-    // TODO: client to confirm coverage list — not yet provided (asked whether we work this area).
-    neighborhoods: [
-      "Bloomingdale",
-      "River Hills",
-      "Diamond Hill",
-      "Copper Ridge",
-      "Twin Lakes",
-      "Buckhorn",
-      "Rose Tree",
-    ],
+      "Valrico's established neighborhoods are mostly 20 to 30 years old, and their systems run hard eight months a year. A lot of them are at first- or second-replacement age, and the two-story plans with a bonus room over the garage have their own predictable comfort complaint.",
+    // TODO: client to confirm coverage list — not yet provided (asked whether we
+    // work this area). Empty until the client supplies it; the template hides it.
+    neighborhoods: [],
     housing:
       "Most Valrico homes are 1980s–2000s suburban builds on their first or second AC system. The recurring issue is the bonus room or fourth bedroom over the garage: it's the hottest space in the house because it's surrounded by unconditioned attic and garage, and it's usually fed by one long undersized duct run. Pool homes add another wrinkle — the pool pump and the AC condenser sometimes share a stressed electrical circuit. We check the panel and the duct to that hot room before assuming the whole system is undersized.",
     local:
-      "Valrico is more open than the older oak-canopy suburbs, so roofs and west walls take more direct sun, and the cooling season here effectively runs from March into November. Homes on well water get mineral scale on the outdoor coil that cuts capacity over time. River Hills is gated, so we coordinate gate access for service and equipment delivery. The rapid growth out toward Lithia and FishHawk has pulled a lot of contractor capacity east, which is part of why a same-day no-cool call in Valrico can be hard to get from the bigger companies in peak summer — we hold slots for it.",
+      "Valrico is more open than the older oak-canopy suburbs, so roofs and west walls take more direct sun, and the cooling season here effectively runs from March into November. Homes on well water get mineral scale on the outdoor coil that cuts capacity over time. In gated communities we coordinate gate access for service and equipment delivery. And in peak summer, when a same-day no-cool call can be hard to get from the bigger companies, we hold slots for it.",
     faqs: [
       {
-        q: "Our River Hills system is 22 years old and still 'fine.' Should I get ahead of it?",
+        q: "Our Valrico system is 22 years old and still 'fine.' Should I get ahead of it?",
         a: "A 22-year-old system is on borrowed time and running at maybe two-thirds of a modern unit's efficiency. Planning the replacement now — off-season, on your schedule — beats an emergency swap during a July heat wave. We can lay out the numbers so you decide.",
       },
       {
@@ -458,19 +421,12 @@ export const cities: City[] = [
     blurb:
       "Acreage properties with guest houses and workshops on multiple systems, almost all on private wells that scale the coils.",
     intro:
-      "Odessa keeps its rural-estate character — larger homes on acre-plus lots around Keystone and the Eagles, often with a guest house, a detached garage, or a workshop, each on its own system. Starkey Ranch is the exception, a dense post-2015 community on the Pasco side. Nearly everyone out here is on a private well, which changes how the equipment ages.",
-    // TODO: client to confirm coverage list — not yet provided (asked whether we work this area).
-    neighborhoods: [
-      "Keystone",
-      "Ivy Lake Estates",
-      "The Eagles",
-      "Starkey Ranch",
-      "Parker Pointe",
-      "Grey Hawk at Lake Polo",
-      "Van Dyke Farms",
-    ],
+      "Odessa keeps its rural-estate character — larger homes on acre-plus lots, often with a guest house, a detached garage, or a workshop, each on its own system. The exception is the dense post-2015 construction on the Pasco side. Nearly everyone out here is on a private well, which changes how the equipment ages.",
+    // TODO: client to confirm coverage list — not yet provided (asked whether we
+    // work this area). Empty until the client supplies it; the template hides it.
+    neighborhoods: [],
     housing:
-      "A typical Odessa property has two or three separate HVAC systems — main house, guest suite or in-law wing, and a mini-split or package unit on a garage or workshop — often of different ages and brands, installed years apart by different contractors. Keystone especially runs to larger equestrian and estate lots on well and septic, where the homes have volume ceilings, big west-facing glass, and long duct runs that make load calculations and proper zoning matter far more than raw tonnage. Starkey Ranch, on the Pasco side, is the opposite: dense post-2015 construction with tight envelopes and single-stage builder heat pumps that raise the same sizing and humidity questions we see across all newer subdivisions.",
+      "A typical Odessa property has two or three separate HVAC systems — main house, guest suite or in-law wing, and a mini-split or package unit on a garage or workshop — often of different ages and brands, installed years apart by different contractors. The larger equestrian and estate lots are on well and septic, and the homes there have volume ceilings, big west-facing glass, and long duct runs that make load calculations and proper zoning matter far more than raw tonnage. The newer construction on the Pasco side is the opposite: dense post-2015 construction with tight envelopes and single-stage builder heat pumps that raise the same sizing and humidity questions we see across all newer subdivisions.",
     local:
       "Well water is the defining local factor: iron and hard minerals scale outdoor coils and clog condensate drains faster than city water does, so coil cleaning and drain maintenance need to happen more often here than in the city. Long gated or unpaved driveways and detached structures mean access planning, longer refrigerant linesets, and correct charge for those runs. Rural power lines see more voltage sag and surge activity in summer storms, so we check contactors, capacitors, and surge protection on service visits. Larger conditioned volumes across a property make multi-zone design and right-sizing each system more important than picking one big unit.",
     faqs: [
@@ -487,7 +443,7 @@ export const cities: City[] = [
         a: "For a detached structure, a dedicated mini-split is almost always the right call — efficient, independently controlled, and no long duct run stealing capacity from the main house.",
       },
       {
-        q: "Is our Starkey Ranch builder system sized for all the west-facing glass?",
+        q: "Is our newer builder system sized for all the west-facing glass?",
         a: "We can check. Builder sizing often doesn't fully account for large west window walls. A load calculation tells us whether the capacity and the duct to those rooms are right.",
       },
     ],
@@ -549,16 +505,10 @@ export const cities: City[] = [
     blurb:
       "Unincorporated Hillsborough — older and manufactured homes on larger lots, plus small commercial off I-4 that can't lose a day.",
     intro:
-      "Seffner is unincorporated Hillsborough east of Tampa, on the agricultural fringe that runs toward Dover and Plant City: older single-family and manufactured homes on larger lots around Mango and Kingsway, mixed with warehouses, shops, and small offices along the US-92 and Martin Luther King corridors near I-4. It's an area where flat-rate pricing matters — so the invoice matches the quote — and where a fair number of contractors won't touch the manufactured-home systems or the window units that still need replacing with central air.",
-    // TODO: client to confirm coverage list — not yet provided (asked whether we work this area).
-    neighborhoods: [
-      "Mango",
-      "Kingsway",
-      "Parsons",
-      "Billy Bowlegs",
-      "Williams Point",
-      "the US-92 / MLK commercial corridor",
-    ],
+      "Seffner is unincorporated Hillsborough east of Tampa, on the agricultural fringe that runs toward Dover and Plant City: older single-family and manufactured homes on larger lots, mixed with warehouses, shops, and small offices along the US-92 and Martin Luther King corridors near I-4. It's an area where flat-rate pricing matters — so the invoice matches the quote — and where a fair number of contractors won't touch the manufactured-home systems or the window units that still need replacing with central air.",
+    // TODO: client to confirm coverage list — not yet provided (asked whether we
+    // work this area). Empty until the client supplies it; the template hides it.
+    neighborhoods: [],
     housing:
       "Seffner's housing runs from 1970s–90s concrete-block site-built homes on well water to manufactured and modular homes that need mobile-home-rated equipment — self-contained or specifically listed units and belly-duct repair — which many companies decline to service. We do. Some of the older block homes are still cooling with through-wall or window units and are ready to move to a proper central or ductless system, which means a load calculation and a new duct or line-set plan rather than a like-for-like swap. On the commercial side near I-4 it's mostly rooftop package units on shops and small warehouses, often past their service life and running on failing economizers and contactors. Rural lots frequently put the condenser a long way from the air handler, so line-set length and refrigerant charge have to be right.",
     local:

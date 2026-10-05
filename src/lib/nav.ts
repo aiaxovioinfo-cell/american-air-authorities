@@ -15,6 +15,7 @@ export const footerNav = {
     { href: "/services/installation", label: "System Installation" },
     { href: "/services/commercial-hvac", label: "Commercial HVAC" },
     { href: "/services/maintenance-plans", label: "Maintenance Plans" },
+    { href: "/services/duct-cleaning", label: "Duct Cleaning" },
   ] satisfies NavLink[],
   company: [
     { href: "/about", label: "About" },

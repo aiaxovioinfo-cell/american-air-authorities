@@ -5,33 +5,13 @@ import { motion } from "framer-motion";
 import { useSafeReducedMotion } from "@/lib/useSafeReducedMotion";
 import { Reveal, RevealItem } from "@/components/ui/Reveal";
 import { HeadlineReveal } from "@/components/ui/HeadlineReveal";
+import { googleReviewsUrl, reviews } from "@/lib/reviews";
 
 /**
- * Section 7 — reviews carousel with drag + momentum. Brass stars.
- *
- * PLACEHOLDER CONTENT: these are representative examples written for layout,
- * NOT real customer reviews. Wire in live Google reviews before launch
- * (Places API / a reviews widget) and delete this array.
- * {/* TODO: client to confirm — replace with verified Google reviews *\/}
+ * Section 7 — reviews carousel with drag + momentum. Real Google reviews,
+ * customer wording as written — see lib/reviews.ts for the selection rules
+ * (no stars: the export has no ratings).
  */
-const REVIEWS = [
-  {
-    name: "Placeholder — homeowner, New Tampa",
-    rating: 5,
-    body: "AC quit on a Saturday in July. They answered, came the same day, and the price they quoted was the price on the invoice. No games.",
-  },
-  {
-    name: "Placeholder — restaurant manager, Brandon",
-    rating: 5,
-    body: "Our rooftop unit went down during service. They worked around our hours and had us running before the dinner rush. Didn't lose a table.",
-  },
-  {
-    name: "Placeholder — homeowner, Wesley Chapel",
-    rating: 5,
-    body: "Two other companies tried to sell me a whole new system. These guys found the actual part, fixed it, and charged a fraction. Honest work.",
-  },
-];
-
 export function Reviews() {
   const reduce = useSafeReducedMotion();
   const trackRef = useRef<HTMLDivElement>(null);
@@ -80,47 +60,30 @@ export function Reviews() {
           dragElastic={0.08}
           dragMomentum
         >
-          {REVIEWS.map((r, i) => (
-            <div
-              key={i}
+          {reviews.map((r) => (
+            <figure
+              key={r.name}
               className="w-[86vw] shrink-0 rounded-lg border border-brass/20 bg-carbon p-8 shadow-plate sm:w-[420px]"
             >
-              <Stars n={r.rating} />
-              <p className="mt-5 text-lg leading-relaxed text-bone/85">
-                &ldquo;{r.body}&rdquo;
-              </p>
-              <p className="mt-6 font-mono text-xs uppercase tracking-[0.14em] text-ash">
-                {r.name}
-              </p>
-            </div>
+              <blockquote className="text-lg leading-relaxed text-bone/85">
+                &ldquo;{r.body}
+                {r.truncated ? " …" : ""}&rdquo;
+              </blockquote>
+              <figcaption className="mt-6 font-mono text-xs uppercase tracking-[0.14em] text-ash">
+                {r.name} · Google review
+              </figcaption>
+            </figure>
           ))}
         </motion.div>
-        <p className="mt-6 font-mono text-[0.7rem] uppercase tracking-[0.14em] text-ash">
-          {/* Placeholder reviews for layout — replace with verified Google reviews. */}
-          Sample reviews shown for layout · verified Google reviews at launch
-        </p>
+        <a
+          href={googleReviewsUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-8 inline-block font-mono text-xs uppercase tracking-[0.14em] text-brass-light underline-offset-4 hover:underline"
+        >
+          Read all reviews on Google &rarr;
+        </a>
       </div>
     </section>
-  );
-}
-
-function Stars({ n }: { n: number }) {
-  return (
-    <div className="flex gap-1" role="img" aria-label={`${n} out of 5 stars`}>
-      {Array.from({ length: 5 }).map((_, i) => (
-        <svg
-          key={i}
-          width="18"
-          height="18"
-          viewBox="0 0 20 20"
-          fill={i < n ? "#E0B478" : "none"}
-          stroke="#A97939"
-          strokeWidth="1.2"
-          aria-hidden
-        >
-          <path d="M10 1.6l2.5 5.2 5.7.8-4.1 4 1 5.7-5.1-2.7-5.1 2.7 1-5.7-4.1-4 5.7-.8z" />
-        </svg>
-      ))}
-    </div>
   );
 }

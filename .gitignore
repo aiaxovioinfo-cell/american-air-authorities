@@ -14,3 +14,6 @@ npm-debug.log*
 
 # client photos held back from the gallery pending review (never served)
 /gallery-held
+
+# client review export — working file, not for the repo
+/reviews-export.txt
