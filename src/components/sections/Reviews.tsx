@@ -6,11 +6,12 @@ import { useSafeReducedMotion } from "@/lib/useSafeReducedMotion";
 import { Reveal, RevealItem } from "@/components/ui/Reveal";
 import { HeadlineReveal } from "@/components/ui/HeadlineReveal";
 import { googleReviewsUrl, reviews } from "@/lib/reviews";
+import { Stars } from "@/components/ui/Stars";
 
 /**
  * Section 7 — reviews carousel with drag + momentum. Real Google reviews,
- * customer wording as written — see lib/reviews.ts for the selection rules
- * (no stars: the export has no ratings).
+ * customer wording as written, with each review's Google star rating — see
+ * lib/reviews.ts for the selection rules. Review JSON-LD is on app/page.tsx.
  */
 export function Reviews() {
   const reduce = useSafeReducedMotion();
@@ -65,7 +66,8 @@ export function Reviews() {
               key={r.name}
               className="w-[86vw] shrink-0 rounded-lg border border-brass/20 bg-carbon p-8 shadow-plate sm:w-[420px]"
             >
-              <blockquote className="text-lg leading-relaxed text-bone/85">
+              <Stars n={r.rating} />
+              <blockquote className="mt-5 text-lg leading-relaxed text-bone/85">
                 &ldquo;{r.body}
                 {r.truncated ? " …" : ""}&rdquo;
               </blockquote>

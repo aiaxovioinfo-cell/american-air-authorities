@@ -4,6 +4,8 @@ import { PageHeader } from "@/components/layout/PageHeader";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { Reveal, RevealItem } from "@/components/ui/Reveal";
 import { googleReviewsUrl, reviews } from "@/lib/reviews";
+import { Stars } from "@/components/ui/Stars";
+import { JsonLd, reviewsJsonLd } from "@/lib/schema";
 
 export const metadata: Metadata = pageMetadata({
   title: "Reviews",
@@ -33,7 +35,8 @@ export default function ReviewsPage() {
               key={r.name}
               className="rounded-lg border border-brass/20 bg-graphite p-8 shadow-plate"
             >
-              <blockquote className="text-lg leading-relaxed text-bone/85">
+              <Stars n={r.rating} />
+              <blockquote className="mt-5 text-lg leading-relaxed text-bone/85">
                 &ldquo;{r.body}
                 {r.truncated ? " …" : ""}&rdquo;
               </blockquote>
@@ -56,6 +59,7 @@ export default function ReviewsPage() {
       </section>
 
       <CtaBand />
+      <JsonLd data={reviewsJsonLd(reviews)} />
     </>
   );
 }

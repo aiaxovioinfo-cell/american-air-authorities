@@ -1,15 +1,24 @@
 import { site } from "./site";
 import { cities } from "./cities";
+import { googleReviewsUrl, type CustomerReview } from "./reviews";
+
+/** Stable node id so other JSON-LD (e.g. Review.itemReviewed) can point here. */
+const BUSINESS_ID = `${site.url}/#business`;
 
 /**
  * LocalBusiness + HVACBusiness JSON-LD. Includes the license number,
  * full service area, and phone so search engines can surface the
  * emergency-ready details a panicked homeowner is searching for.
+ *
+ * TODO: client to confirm — add aggregateRating ONLY once we have the real
+ * Google profile figures ("ratingValue X.X, reviewCount N"), and show the
+ * same figure visibly on the page. Never derive it from the reviews we show.
  */
 export function businessJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": ["HVACBusiness", "LocalBusiness"],
+    "@id": BUSINESS_ID,
     name: site.name,
     slogan: site.tagline,
     telephone: site.phoneDisplay,
@@ -60,7 +69,34 @@ export function businessJsonLd() {
       opens: site.hours.opens,
       closes: site.hours.closes,
     },
-    sameAs: [site.instagram.url],
+    sameAs: [site.instagram.url, googleReviewsUrl],
+  };
+}
+
+/**
+ * One Review node per displayed review. reviewBody is exactly the text on the
+ * page (truncated reviews keep their ellipsis) and the rating is shown as
+ * stars on each card. No aggregateRating here — see businessJsonLd.
+ */
+export function reviewsJsonLd(list: CustomerReview[]) {
+  return {
+    "@context": "https://schema.org",
+    "@graph": list.map((r) => ({
+      "@type": "Review",
+      itemReviewed: {
+        "@type": ["HVACBusiness", "LocalBusiness"],
+        "@id": BUSINESS_ID,
+        name: site.name,
+      },
+      author: { "@type": "Person", name: r.name },
+      reviewRating: {
+        "@type": "Rating",
+        ratingValue: r.rating,
+        bestRating: 5,
+        worstRating: 1,
+      },
+      reviewBody: r.body + (r.truncated ? " …" : ""),
+    })),
   };
 }
 
